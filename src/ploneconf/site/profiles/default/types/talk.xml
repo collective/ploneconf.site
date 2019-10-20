@@ -25,6 +25,7 @@
   <element value="plone.namefromtitle"/>
   <element value="ploneconf.featured"/>
   <element value="ploneconf.talk"/>
+  <element value="plone.versioning" />
  </property>
  <property name="schema"></property>
  <property name="model_source"></property>
