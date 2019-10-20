@@ -28,7 +28,7 @@
 
   <browser:page
       name="talkview"
-      for="*"
+      for="ploneconf.site.interfaces.ITalk"
       layer="zope.interface.Interface"
       class=".views.TalkView"
       template="templates/talkview.pt"

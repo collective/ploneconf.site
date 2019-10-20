@@ -24,6 +24,7 @@
   <element value="plone.dublincore"/>
   <element value="plone.namefromtitle"/>
   <element value="ploneconf.featured"/>
+  <element value="ploneconf.talk"/>
  </property>
  <property name="schema"></property>
  <property name="model_source"></property>
