@@ -44,6 +44,8 @@
       name="ploneconf.site-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <utility
+      name="ploneconf.site.vocabularies.Rooms"
+      component="ploneconf.site.vocabularies.RoomsVocabularyFactory" />
 
 </configure>

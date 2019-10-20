@@ -57,4 +57,7 @@
     <value key="last_compilation"></value>
   </records>
 
+  <records interface="ploneconf.site.browser.controlpanel.IPloneconfControlPanel"
+           prefix="ploneconf" />
+
 </registry>

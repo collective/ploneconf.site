@@ -65,4 +65,11 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="ploneconf-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.PloneconfControlPanelView"
+      permission="cmf.ManagePortal"
+      />
+
 </configure>
