@@ -1,5 +1,41 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <registry>
-<!-- -*- extra stuff goes here -*- -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.audience">
+    <value key="title">Audience</value>
+    <value key="description">A custom speaker index</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.string.is</element>
+      <element>plone.app.querystring.operation.string.contains</element>
+    </value>
+    <value key="group">Metadata</value>
+  </records>
 
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.type_of_talk">
+    <value key="title">Type of Talk</value>
+    <value key="description">A custom index</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.string.is</element>
+      <element>plone.app.querystring.operation.string.contains</element>
+    </value>
+    <value key="group">Metadata</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.speaker">
+    <value key="title">Speaker</value>
+    <value key="description">A custom index</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.string.is</element>
+      <element>plone.app.querystring.operation.string.contains</element>
+    </value>
+    <value key="group">Metadata</value>
+  </records>
 </registry>
