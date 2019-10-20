@@ -18,4 +18,11 @@
       directory="static"
       />
 
+  <browser:page
+      name="training"
+      for="*"
+      template="templates/training.pt"
+      permission="zope2.View"
+      />
+
 </configure>
