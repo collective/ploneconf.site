@@ -26,3 +26,7 @@ body.userrole-reviewer #formfield-form-widgets-IEventBasic-open_end {
     -moz-box-shadow: 0 0 8px #000000;
     -webkit-box-shadow: 0 0 8px #000000;
 }
+
+#content .event.summary {
+    max-width: 50%;
+}

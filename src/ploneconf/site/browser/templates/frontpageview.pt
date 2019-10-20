@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ploneconf.site">
+<body>
+
+<metal:content-core fill-slot="content-core">
+
+    <div id="parent-fieldname-text"
+        tal:condition="python: getattr(context, 'text', None)"
+        tal:content="structure python:context.text.output_relative_to(view.context)" />
+
+    <div class="col-lg-6">
+        <h2>Todays Talks</h2>
+        <div metal:use-macro="context/@@talklistview/talklist">
+            Instead of this the content of the macro will appear...
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <a class="twitter-timeline"  href="https://twitter.com/search?q=ploneconf" data-widget-id="786311347323535360">Tweets about ploneconf</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
+</metal:content-core>
+
+</body>
+</html>

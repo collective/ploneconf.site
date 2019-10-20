@@ -72,4 +72,13 @@
       permission="cmf.ManagePortal"
       />
 
+  <browser:page
+      name="frontpageview"
+      for="*"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
+      class=".frontpage.FrontpageView"
+      template="templates/frontpageview.pt"
+      permission="zope2.View"
+      />
+
 </configure>
