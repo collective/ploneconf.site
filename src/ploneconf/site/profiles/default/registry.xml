@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <registry>
+
   <records interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.audience">
     <value key="title">Audience</value>
@@ -38,4 +39,9 @@
     </value>
     <value key="group">Metadata</value>
   </records>
+
+  <record name="plone.enable_self_reg">
+    <value>True</value>
+  </record>
+
 </registry>
