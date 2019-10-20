@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-12-09 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ploneconf/site/behaviors/configure.zcml
+msgid "Adds a link to lanyrd"
+msgstr "Link zu Lanyrd"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Advertisement (Gold-sponsors and above)"
+msgstr "Werbung (für Gold-Sponsoren und höher)"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Allow talk submission"
+msgstr "Einreichen von Vorträgen erlaubt"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Allow the submission of talks for anonymous user"
+msgstr "Aktiviert das anonyme Einreichen von Vorträgen"
+
+#: ploneconf/site/browser/templates/talklistview.pt
+#: ploneconf/site/content/talk.py
+msgid "Audience"
+msgstr "Zielgruppe"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Available Rooms for the conference"
+msgstr "Verfügbare Räume"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Available audiences for talks"
+msgstr "Verfügbare Zielgruppen für Vorträge"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Available types for talks"
+msgstr "Verfügbare Vortragsarten"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Bronze Sponsor"
+msgstr ""
+
+#: ploneconf/site/content/talk.py
+msgid "Company"
+msgstr "Firma oder Einrichtung"
+
+#: ploneconf/site/content/talk.py
+msgid "Description of the talk (max. 2000 characters)"
+msgstr "Kurzbeschreibung (max. 2000 Zeichen)"
+
+#: ploneconf/site/content/talk.py
+msgid "Details"
+msgstr ""
+
+#: ploneconf/site/content/talk.py
+msgid "Email"
+msgstr ""
+
+#: ploneconf/site/content/talk.py
+msgid "Email adress of the speaker"
+msgstr "Email der/des Vortragenden"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "First day of the conference"
+msgstr "Erster Tag der Konferenz"
+
+#: ploneconf/site/content/talk.py
+msgid "Github username"
+msgstr "Github Benutzername"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Gold Sponsor"
+msgstr ""
+
+#: ploneconf/site/content/talk.py
+msgid "Image"
+msgstr "Foto"
+
+#: ploneconf/site/configure.zcml
+msgid "Installs the ploneconf.site add-on."
+msgstr ""
+
+#: ploneconf/site/content/sponsor.py
+msgid "Link"
+msgstr ""
+
+#: ploneconf/site/content/sponsor.py
+msgid "Logo"
+msgstr ""
+
+#: ploneconf/site/content/talk.py
+msgid "Name (or names) of the speaker"
+msgstr "Name (oder Namen) der/des Vortragenden"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Platinum Sponsor"
+msgstr "Platin Sponsor"
+
+#: ploneconf/site/browser/controlpanel.py
+msgid "Ploneconf Settings"
+msgstr "Ploneconf Einstellungen"
+
+#: ploneconf/site/content/talk.py
+msgid "Portrait of the speaker"
+msgstr "Portrait der/des Vortragenden"
+
+#: ploneconf/site/browser/templates/talklistview.pt
+#: ploneconf/site/content/talk.py
+msgid "Room"
+msgstr "Raum"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Secret Notes (only for site-admins)"
+msgstr "Interne Notizen (nur für admins)"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Silver Sponsor"
+msgstr "Silber Sponsor"
+
+#: ploneconf/site/behaviors/configure.zcml
+msgid "Social Behavior"
+msgstr ""
+
+#: ploneconf/site/browser/templates/talklistview.pt
+#: ploneconf/site/content/talk.py
+msgid "Speaker"
+msgstr "Vortragende/r"
+
+#: ploneconf/site/content/talk.py
+msgid "Speaker Biography (max. 1000 characters)"
+msgstr "Kurzbiographie des/der Vortragenden"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Sponsoring Level"
+msgstr "Sponsor Level"
+
+#: ploneconf/site/content/sponsor.py
+msgid "Text"
+msgstr "Text"
+
+#: ploneconf/site/browser/templates/talklistview.pt
+msgid "Time"
+msgstr "Zeit"
+
+#: ploneconf/site/browser/templates/talklistview.pt
+msgid "Title"
+msgstr "Titel"
+
+#: ploneconf/site/browser/templates/frontpage.pt
+msgid "Todays Talks"
+msgstr "Das heutige Programm"
+
+#: ploneconf/site/browser/templates/frontpage.pt
+msgid "Tweets about ploneconf"
+msgstr "Tweets über diese Tagung"
+
+#: ploneconf/site/content/talk.py
+msgid "Twitter name"
+msgstr "Twitter"
+
+#: ploneconf/site/content/talk.py
+msgid "Type of talk"
+msgstr "Art des Vortrags"
+
+#: ploneconf/site/content/talk.py
+msgid "URL of the Website that holds the slides"
+msgstr "Adresse der Website mit den Folien des Vortrags"
+
+#: ploneconf/site/content/talk.py
+msgid "URL of the Website that holds the video of the talk"
+msgstr "Adresse der Website mit dem Video des Vortrags"
+
+#: ploneconf/site/configure.zcml
+msgid "Uninstalls the ploneconf.site add-on."
+msgstr ""
+
+#: ploneconf/site/browser/templates/sponsors_viewlet.pt
+msgid "We love our sponsors"
+msgstr "Wir ♥ unsere Sponsoren"
+
+#: ploneconf/site/content/talk.py
+msgid "Website"
+msgstr ""
+
+#: ploneconf/site/configure.zcml
+msgid "ploneconf.site"
+msgstr ""
+
+#: ploneconf/site/configure.zcml
+msgid "ploneconf.site (uninstall)"
+msgstr ""
