@@ -21,6 +21,7 @@
   <browser:page
       name="training"
       for="*"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       class=".views.DemoView"
       template="templates/training.pt"
       permission="zope2.View"
@@ -29,7 +30,7 @@
   <browser:page
       name="talkview"
       for="ploneconf.site.interfaces.ITalk"
-      layer="zope.interface.Interface"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       class=".views.TalkView"
       template="templates/talkview.pt"
       permission="zope2.View"
@@ -38,7 +39,7 @@
   <browser:page
       name="talklistview"
       for="*"
-      layer="zope.interface.Interface"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       class=".views.TalkListView"
       template="templates/talklistview.pt"
       permission="zope2.View"
