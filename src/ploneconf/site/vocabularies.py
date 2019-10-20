@@ -6,6 +6,21 @@ from zope.schema.interfaces import IVocabularyFactory
 
 
 @provider(IVocabularyFactory)
-def RoomsVocabularyFactory(context):
-    values = api.portal.get_registry_record('ploneconf.rooms')
+def RoomVocabulary(context):
+    name = 'ploneconf.room'
+    values = api.portal.get_registry_record(name)
+    return safe_simplevocabulary_from_values(values)
+
+
+@provider(IVocabularyFactory)
+def TalkTypeVocabulary(context):
+    name = 'ploneconf.type_of_talk'
+    values = api.portal.get_registry_record(name)
+    return safe_simplevocabulary_from_values(values)
+
+
+@provider(IVocabularyFactory)
+def AudienceVocabulary(context):
+    name = 'ploneconf.audience'
+    values = api.portal.get_registry_record(name)
     return safe_simplevocabulary_from_values(values)

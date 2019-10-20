@@ -24,13 +24,12 @@
   <element value="plone.dublincore"/>
   <element value="plone.namefromtitle"/>
   <element value="ploneconf.featured"/>
-  <element value="ploneconf.talk"/>
   <element value="plone.versioning" />
   <element value="plone.eventbasic"/>
  </property>
- <property name="schema"></property>
+ <property name="schema">ploneconf.site.content.talk.ITalk</property>
  <property name="model_source"></property>
- <property name="model_file">ploneconf.site.content:talk.xml</property>
+ <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>

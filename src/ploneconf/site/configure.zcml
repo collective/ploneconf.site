@@ -45,7 +45,15 @@
       />
 
   <utility
-      name="ploneconf.site.vocabularies.Rooms"
-      component="ploneconf.site.vocabularies.RoomsVocabularyFactory" />
+      name="ploneconf.room"
+      component="ploneconf.site.vocabularies.RoomVocabulary" />
+
+  <utility
+      name="ploneconf.type_of_talk"
+      component="ploneconf.site.vocabularies.TalkTypeVocabulary" />
+
+  <utility
+      name="ploneconf.audience"
+      component="ploneconf.site.vocabularies.AudienceVocabulary" />
 
 </configure>

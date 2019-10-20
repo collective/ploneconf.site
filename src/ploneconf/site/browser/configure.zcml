@@ -34,7 +34,7 @@
 
   <browser:page
       name="talkview"
-      for="ploneconf.site.interfaces.ITalk"
+      for="ploneconf.site.content.talk.ITalk"
       layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       class=".views.TalkView"
       template="templates/talkview.pt"

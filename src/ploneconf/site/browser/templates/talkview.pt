@@ -4,40 +4,81 @@
 <body>
     <metal:content-core fill-slot="content-core">
 
-        <tal:eventsummary replace="structure context/@@event_summary"/>
+        <tal:eventsummary
+            tal:condition="python: not context.hide_date"
+            replace="structure context/@@event_summary"/>
 
         <p>
-            <span tal:content="context/type_of_talk">
+            <strong tal:content="context/type_of_talk">
                 Talk
-            </span>
-            suitable for
+            </strong>
+        </p>
+
+        <p tal:condition="python:context.room and context_state.workflow_state() == 'published'">
+            <strong tal:content="structure view/w/room/label"/>:
+            <span  tal:content="structure view/w/room/render"/>
+        </p>
+
+        <p>
+            <strong tal:content="structure view/w/audience/label"/>:
             <span tal:replace="structure view/w/audience/render">
                 Audience
             </span>
-        </p>
-
-        <p tal:content="structure view/w/room/render">
-            Room
         </p>
 
         <div tal:content="structure view/w/details/render">
             Details
         </div>
 
-        <div class="newsImageContainer">
-            <img tal:condition="python:getattr(context, 'image', None)"
-                 tal:attributes="src string:${context/absolute_url}/@@images/image/thumb" />
-        </div>
+        <div class="speakerinfo">
 
-        <div>
-            <a class="email-link" tal:attributes="href string:mailto:${context/email}">
-                <strong tal:content="context/speaker">
-                    Jane Doe
-                </strong>
-            </a>
+            <img tal:condition="python:getattr(context.aq_base, 'image', None)"
+                 tal:attributes="src string:${context/absolute_url}/@@images/image/mini" />
+
+            <h3 tal:content="python:context.speaker" />
+
+            <p tal:define="linktext python:context.company or context.website"
+               tal:condition="python: linktext">
+                <a tal:attributes="href python:context.website"
+                   tal:omit-tag="python: not context.website">
+                    <strong tal:content="linktext">
+                        Global Corp.
+                    </strong>
+                </a>
+            </p>
+
             <div tal:content="structure view/w/speaker_biography/render">
                 Biography
             </div>
+
+            <p class="userdata">
+                <span tal:define="twitter python: context.twitter.replace(u'@', u'') if context.twitter else None"
+                      tal:condition="python:twitter">
+                    Twitter:
+                    <a tal:attributes="href python:u'https://twitter.com/@' + twitter"
+                       tal:content="python: '@' + twitter">
+                        https://twitter.com/@foobar
+                    </a><br />
+                </span>
+                <span tal:define="github python: context.github"
+                   tal:condition="python:github">
+                    Github:
+                    <a tal:attributes="href python:u'https://github.com/' + github"
+                       tal:content="python: github">
+                        https://github.com/foobar
+                   </a><br />
+                </span>
+                <span tal:define="email python: context.email"
+                   tal:condition="python:email">
+                    Email:
+                    <a class="email-link"
+                       tal:attributes="href string:mailto:${email}"
+                       tal:content="python: email">
+                        foobar@plone.org
+                    </a>
+                </span>
+            <p>
+
         </div>
 
     </metal:content-core>

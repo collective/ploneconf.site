@@ -10,11 +10,4 @@
       provides=".featured.IFeatured"
       />
 
-  <plone:behavior
-      title="Talk"
-      name="ploneconf.talk"
-      description="Marker interface for talks to be able to bind views to."
-      provides="..interfaces.ITalk"
-      />
-
 </configure>
