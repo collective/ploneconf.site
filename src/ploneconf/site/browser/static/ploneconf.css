@@ -1,0 +1,17 @@
+header #portal-header #portal-searchbox .searchSection {
+    display: none;
+}
+
+body.userrole-contributor #formfield-form-widgets-IEventBasic-start,
+body.userrole-contributor #formfield-form-widgets-IEventBasic-end > *,
+body.userrole-contributor #formfield-form-widgets-IEventBasic-whole_day,
+body.userrole-contributor #formfield-form-widgets-IEventBasic-open_end {
+    display: none;
+}
+
+body.userrole-reviewer #formfield-form-widgets-IEventBasic-start,
+body.userrole-reviewer #formfield-form-widgets-IEventBasic-end > *,
+body.userrole-reviewer #formfield-form-widgets-IEventBasic-whole_day,
+body.userrole-reviewer #formfield-form-widgets-IEventBasic-open_end {
+    display: block;
+}

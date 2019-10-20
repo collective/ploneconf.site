@@ -44,4 +44,17 @@
     <value>True</value>
   </record>
 
+  <!-- the plonconf bundle -->
+  <records prefix="plone.bundles/ploneconf-bundle"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>ploneconf-main</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="csscompilation">++plone++ploneconf.site/ploneconf.css</value>
+    <value key="jscompilation">++plone++ploneconf.site/ploneconf.js</value>
+    <value key="last_compilation"></value>
+  </records>
+
 </registry>
