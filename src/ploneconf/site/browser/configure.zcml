@@ -55,4 +55,14 @@
       permission="zope2.View"
       />
 
+  <browser:viewlet
+      name="sponsorsviewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      for="*"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
+      class=".viewlets.SponsorsViewlet"
+      template="templates/sponsors_viewlet.pt"
+      permission="zope2.View"
+      />
+
 </configure>
