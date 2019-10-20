@@ -10,6 +10,12 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
+
+  <p class="pat-moment"
+     data-pat-moment="format:calendar">
+      ${python: context.Date()}
+  </p>
+
   <div id="parent-fieldname-text"
       tal:condition="context/text"
       tal:content="structure python:context.text.output_relative_to(view.context)"
