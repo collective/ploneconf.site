@@ -28,6 +28,10 @@
             </a>
           </h2>
 
+          <p tal:condition="python: item_type == 'News Item'">
+            ${python:plone_view.toLocalizedTime(item.Date())}
+          </p>
+
           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
 
           <div tal:define="thumb_url python:item_url + '/@@images/image/' + thumb_scale_summary;"
