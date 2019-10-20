@@ -1,1 +1,43 @@
-<h1>Hello World</h1>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ploneconf.site">
+<body>
+
+<metal:content-core fill-slot="content-core">
+
+<table class="listing"
+       tal:define="talks python:[{'title': 'Dexterity is the new default!',
+                                  'subjects': ('content-types', 'dexterity')},
+                                 {'title': 'Mosaic will be the next big thing.',
+                                  'subjects': ('layout', 'deco', 'views'),
+                                  'url': 'https://www.youtube.com/watch?v=QSNufxaYb1M'},
+                                 {'title': 'The State of Plone',
+                                  'subjects': ('keynote',) },
+                                 {'title': 'Diazo is a powerful tool for theming!',
+                                  'subjects': ('design', 'diazo', 'xslt')},
+                                 {'title': 'Magic templates in Plone 5',
+                                  'subjects': ('templates', 'TAL'),
+                                  'url': 'http://www.starzel.de/blog/magic-templates-in-plone-5'},
+                                ]">
+    <tr>
+        <th>Title</th>
+        <th>Topics</th>
+    </tr>
+
+    <tr tal:repeat="talk python:talks">
+        <td>
+            <a href="${python:talk.get('url', 'https://www.google.com/search?q=%s' % talk['title'])}">
+                ${python:talk['title']}
+            </a>
+        </td>
+        <td>
+            ${python:', '.join(talk['subjects'])}
+        </td>
+    </tr>
+</table>
+
+</metal:content-core>
+
+</body>
+</html>
