@@ -23,6 +23,7 @@
  <property name="behaviors">
   <element value="plone.dublincore"/>
   <element value="plone.namefromtitle"/>
+  <element value="ploneconf.featured"/>
  </property>
  <property name="schema"></property>
  <property name="model_source"></property>
