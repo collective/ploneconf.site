@@ -54,15 +54,14 @@ class TalkListView(BrowserView):
         results = []
         brains = api.content.find(context=self.context, portal_type='talk')
         for brain in brains:
-            talk = brain.getObject()
             results.append({
                 'title': brain.Title,
                 'description': brain.Description,
                 'url': brain.getURL(),
-                'audience': ', '.join(talk.audience),
-                'type_of_talk': talk.type_of_talk,
-                'speaker': talk.speaker,
-                'room': talk.room,
+                'audience': ', '.join(brain.audience or []),
+                'type_of_talk': brain.type_of_talk,
+                'speaker': brain.speaker,
+                'room': brain.room,
                 'uuid': brain.UID,
                 })
         return results
