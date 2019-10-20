@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from plone import api
 from plone.dexterity.browser.view import DefaultView
 from Products.Five.browser import BrowserView
 from operator import itemgetter
@@ -43,3 +44,25 @@ class DemoView(BrowserView):
 class TalkView(DefaultView):
     """ The default view for talks
     """
+
+
+class TalkListView(BrowserView):
+    """ A list of talks
+    """
+
+    def talks(self):
+        results = []
+        brains = api.content.find(context=self.context, portal_type='talk')
+        for brain in brains:
+            talk = brain.getObject()
+            results.append({
+                'title': brain.Title,
+                'description': brain.Description,
+                'url': brain.getURL(),
+                'audience': ', '.join(talk.audience),
+                'type_of_talk': talk.type_of_talk,
+                'speaker': talk.speaker,
+                'room': talk.room,
+                'uuid': brain.UID,
+                })
+        return results

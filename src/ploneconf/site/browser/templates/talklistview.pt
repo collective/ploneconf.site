@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ploneconf.site">
+<body>
+  <metal:content-core fill-slot="content-core">
+  <table class="listing"
+         id="talks"
+         tal:define="talks python:view.talks()">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Speaker</th>
+        <th>Audience</th>
+        <th>Room</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tal:repeat="talk talks">
+        <td>
+          <a href=""
+             tal:attributes="href python:talk['url'];
+                             title python:talk['description']"
+             tal:content="python:talk['title']">
+             The 7 sins of Plone development
+          </a>
+        </td>
+        <td tal:content="python:talk['speaker']">
+            Philip Bauer
+        </td>
+        <td tal:content="python:talk['audience']">
+            Advanced
+        </td>
+        <td tal:content="python:talk['room']">
+            101
+        </td>
+      </tr>
+      <tr tal:condition="not:talks">
+        <td colspan=4>
+            No talks so far :-(
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  </metal:content-core>
+</body>
+</html>
