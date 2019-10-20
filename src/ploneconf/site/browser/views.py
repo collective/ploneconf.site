@@ -63,5 +63,6 @@ class TalkListView(BrowserView):
                 'speaker': brain.speaker,
                 'room': brain.room,
                 'uuid': brain.UID,
+                'start': brain.start,
                 })
         return results

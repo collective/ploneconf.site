@@ -4,6 +4,8 @@
 <body>
     <metal:content-core fill-slot="content-core">
 
+        <tal:eventsummary replace="structure context/@@event_summary"/>
+
         <p>
             <span tal:content="context/type_of_talk">
                 Talk

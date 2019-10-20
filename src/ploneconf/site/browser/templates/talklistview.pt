@@ -11,6 +11,7 @@
         <th>Title</th>
         <th>Speaker</th>
         <th>Audience</th>
+        <th>Time</th>
         <th>Room</th>
       </tr>
     </thead>
@@ -29,6 +30,11 @@
         </td>
         <td tal:content="python:talk['audience']">
             Advanced
+        </td>
+        <td class="pat-moment"
+            data-pat-moment="format:calendar"
+            tal:content="python:talk['start']">
+            Time
         </td>
         <td tal:content="python:talk['room']">
             101
