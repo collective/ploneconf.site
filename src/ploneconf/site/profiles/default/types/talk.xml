@@ -12,8 +12,9 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">talkview</property>
  <property name="view_methods">
+  <element value="talkview"/>
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>

@@ -26,4 +26,13 @@
       permission="zope2.View"
       />
 
+  <browser:page
+     name="talkview"
+     for="*"
+     layer="zope.interface.Interface"
+     class=".views.TalkView"
+     template="templates/talkview.pt"
+     permission="zope2.View"
+     />
+
 </configure>

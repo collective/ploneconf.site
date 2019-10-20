@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from plone.dexterity.browser.view import DefaultView
 from Products.Five.browser import BrowserView
 from operator import itemgetter
 
@@ -37,3 +38,8 @@ class DemoView(BrowserView):
             )
             results.append(talk)
         return sorted(results, key=itemgetter('title'))
+
+
+class TalkView(DefaultView):
+    """ The default view for talks
+    """
