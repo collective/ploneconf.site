@@ -18,6 +18,11 @@
       directory="static"
       />
 
+  <browser:resourceDirectory
+      name="talklist"
+      directory="talklist"
+      />
+
   <browser:page
       name="training"
       for="*"

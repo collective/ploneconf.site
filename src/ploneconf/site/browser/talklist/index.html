@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html
+  xmlns:v-on="https://vuejs.org/"
+  xmlns:="https://vuejs.org/">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/Plone/++resource++talklist/" />
+    <title>List Of Talks</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+  </head>
+
+  <body>
+
+    <h1>List of talks</h1>
+
+    <div id="talklist">
+
+      <div v-if="! is_logged_in()">
+        <form role="form">
+          <fieldset>
+            <legend>Login</legend>
+              <label for="userid">Login</label>
+              <input type="text" id="userid" v-model="userid" placeholder="Enter login">
+              <label for="passwd">Password</label>
+              <input type="password" id="passwd" v-model="passwd" placeholder="Password">
+          </fieldset>
+          <button v-on:click="login(userid,passwd)">
+            Login
+          </button>
+        </form>
+      </div>
+
+      <div v-if="is_logged_in()">
+        <div role="tablist">
+          <b-card no-body class="mb-1" v-for="(item, index) in items">
+            <b-card-header header-tag="header" class="p-1" role="tab">
+              <b-button block href="#" v-b-toggle="'accordion-' + index" variant="info">{{ item.type }}: {{ item.title }} by {{ item.speaker }}</b-button>
+            </b-card-header>
+            <b-collapse :id="'accordion-' + index" accordion="talklist-accordion" role="tabpanel">
+              <b-card-body>
+                <b-card-text>{{item.details}}</b-card-text>
+              </b-card-body>
+            </b-collapse>
+          </b-card>
+        </div>
+        <div>
+          <h4>Submit Lightning Talk</h4>
+          <form role="form">
+            <fieldset>
+              <label for="subject">Subject</label>
+              <input type="text"
+                id="subject"
+                v-model="subject"
+                placeholder="Enter talk subject">
+              <label for="summary">summary</label>
+              <input type="text"
+                id="summary"
+                v-model="summary"
+                placeholder="Short summary">
+            </fieldset>
+            <button v-on:click="submit_talk(subject,summary)">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CMutationObserver" crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="talklist.js"></script>
+  </body>
+</html>
