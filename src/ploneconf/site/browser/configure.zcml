@@ -44,4 +44,14 @@
       permission="zope2.View"
       />
 
+  <browser:viewlet
+      name="featured"
+      for="ploneconf.site.behaviors.featured.IFeatured"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      class=".viewlets.FeaturedViewlet"
+      layer="zope.interface.Interface"
+      template="templates/featured_viewlet.pt"
+      permission="zope2.View"
+      />
+
 </configure>
