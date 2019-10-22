@@ -31,7 +31,7 @@ var app = new Vue({
       return localStorage.getItem('jwtoken') != null;
     },
     submit_talk: function(subject, summary) {
-      this.$http.post('/Plone/talks',
+      this.$http.post('/Plone/the-event/talks',
                  {'@type':'talk',
                   'type_of_talk':'Lightning Talk',
                   'audience':['Beginner','Advanced','Professionals'],
@@ -61,7 +61,7 @@ var app = new Vue({
         });
     },
     load_talks: function() {
-      this.$http.get('/Plone/talks',
+      this.$http.get('/Plone/the-event/talks',
                 {headers:{'Accept':'application/json'}}).
         then(function(response) {
           this.items = [];
