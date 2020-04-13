@@ -30,6 +30,16 @@
             Details
         </div>
 
+        <p>
+          <strong tal:content="structure view/w/slides/label"/>:
+          <div tal:replace="structure view/w/slides/render"></div>
+        </p>
+
+        <p>
+          <strong tal:content="structure view/w/video/label"/>:
+          <div tal:replace="structure view/w/video/render"></div>
+        </p>
+
         <div class="speakerinfo">
 
             <img tal:condition="python:getattr(context.aq_base, 'image', None)"

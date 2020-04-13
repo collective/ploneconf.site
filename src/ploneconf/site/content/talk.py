@@ -89,17 +89,19 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    directives.write_permission(slides='cmf.ReviewPortalContent')
-    slides = schema.TextLine(
-        title=_(u'URL of the Website that holds the slides'),
+    # directives.write_permission(slides='cmf.ReviewPortalContent')
+    slides = schema.URI(
+        title=_(u'Vortragsfolien'),
+        description=_(u'URL of the Website that holds the slides'),
         required=False,
         )
 
     directives.write_permission(video='cmf.ReviewPortalContent')
-    video = schema.TextLine(
-        title=_(u'URL of the Website that holds the video of the talk'),
+    video = schema.URI(
+        title=_(u'Video'),
+        description=_(u'URL of the Website that holds the video of the talk'),
         required=False,
-        )
+    )
 
     directives.write_permission(hide_date='cmf.ReviewPortalContent')
     hide_date = schema.Bool(
