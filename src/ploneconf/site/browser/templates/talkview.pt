@@ -30,12 +30,12 @@
             Details
         </div>
 
-        <p>
+        <p tal:condition="python: view.context.url">
           <strong tal:content="structure view/w/slides/label"/>:
           <div tal:replace="structure view/w/slides/render"></div>
         </p>
 
-        <p>
+        <p tal:condition="python: view.context.video">
           <strong tal:content="structure view/w/video/label"/>:
           <div tal:replace="structure view/w/video/render"></div>
         </p>
