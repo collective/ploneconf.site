@@ -21,9 +21,9 @@
  <property name="klass">ploneconf.site.content.talk.Talk</property>
  <property name="schema">ploneconf.site.content.talk.ITalk</property>
  <property name="behaviors">
-  <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
-  <element value="plone.app.content.interfaces.INameFromTitle"/>
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
+  <element value="plone.dublincore"/>
+  <element value="plone.namefromtitle"/>
+  <element value="plone.versioning"/>
  </property>
  <property name="model_source"></property>
  <property name="model_file"></property>
