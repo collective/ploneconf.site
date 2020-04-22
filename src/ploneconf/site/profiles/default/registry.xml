@@ -38,4 +38,9 @@
     </value>
     <value key="group">Metadata</value>
   </records>
+
+  <record name="plone.enable_self_reg">
+    <value>True</value>
+  </record>
+
 </registry>

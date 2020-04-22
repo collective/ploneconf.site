@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+ <object name="talks_workflow" meta_type="Workflow"/>
+ <bindings>
+  <type type_id="talk">
+   <bound-workflow workflow_id="talks_workflow"/>
+  </type>
+ </bindings>
+</object>
