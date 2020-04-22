@@ -25,7 +25,7 @@ def upgrade_site(setup):
     if 'training' not in portal:
         training_folder = api.content.create(
             container=portal,
-            type='Folder',
+            type='Document',
             id='training',
             title=u'Training')
     else:
@@ -34,7 +34,7 @@ def upgrade_site(setup):
     if 'schedule' not in portal:
         schedule_folder = api.content.create(
             container=portal,
-            type='Folder',
+            type='Document',
             id='schedule',
             title=u'Schedule')
     else:
@@ -44,7 +44,7 @@ def upgrade_site(setup):
     if 'location' not in portal:
         location_folder = api.content.create(
             container=portal,
-            type='Folder',
+            type='Document',
             id='location',
             title=u'Location')
     else:
@@ -53,7 +53,7 @@ def upgrade_site(setup):
     if 'sponsors' not in portal:
         sponsors_folder = api.content.create(
             container=portal,
-            type='Folder',
+            type='Document',
             id='sponsors',
             title=u'Sponsors')
     else:
@@ -62,7 +62,7 @@ def upgrade_site(setup):
     if 'sprint' not in portal:
         sprint_folder = api.content.create(
             container=portal,
-            type='Folder',
+            type='Document',
             id='sprint',
             title=u'Sprint')
     else:
