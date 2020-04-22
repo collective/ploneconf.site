@@ -30,10 +30,11 @@ class ITalk(model.Schema):
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
-    audience = schema.List(
+    audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(
-            values=('Beginner', 'Advanced', 'Professionals')),
+            values=['Beginner', 'Advanced', 'Professionals'],
+            ),
         required=False,
         )
 
@@ -84,5 +85,4 @@ class ITalk(model.Schema):
 
 @implementer(ITalk)
 class Talk(Container):
-    """Talk instance class
-    """
+    """Talk instance class"""
