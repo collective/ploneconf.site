@@ -43,4 +43,7 @@
     <value>True</value>
   </record>
 
+  <records interface="ploneconf.site.browser.controlpanel.IPloneconfControlPanel"
+           prefix="ploneconf" />
+
 </registry>

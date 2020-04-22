@@ -38,6 +38,13 @@ class ITalk(model.Schema):
         required=False,
         )
 
+    directives.write_permission(room='cmf.ReviewPortalContent')
+    room = schema.Choice(
+        title=_(u'Room'),
+        vocabulary='ploneconf.rooms',
+        required=False,
+        )
+
     speaker = schema.TextLine(
         title=_(u'Speaker'),
         description=_(u'Name (or names) of the speaker'),
