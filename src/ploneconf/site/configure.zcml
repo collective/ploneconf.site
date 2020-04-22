@@ -48,4 +48,12 @@
       name="ploneconf.rooms"
       component="ploneconf.site.vocabularies.RoomsVocabularyFactory" />
 
+  <utility
+      name="ploneconf.types_of_talk"
+      component="ploneconf.site.vocabularies.TalkTypesVocabulary" />
+
+  <utility
+      name="ploneconf.audiences"
+      component="ploneconf.site.vocabularies.AudiencesVocabulary" />
+
 </configure>

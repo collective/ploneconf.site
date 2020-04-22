@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import date
+from ploneconf.site import _
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.z3cform import layout
@@ -12,7 +13,7 @@ class IPloneconfControlPanel(Interface):
     date_of_conference = schema.Date(
         title=u'First day of the conference',
         required=False,
-        default=date(2019, 10, 21),
+        default=date(2050, 9, 13),
     )
 
     talk_submission_open = schema.Bool(
@@ -25,6 +26,22 @@ class IPloneconfControlPanel(Interface):
     rooms = schema.List(
         title=u'Available Rooms for the conference',
         default=[u'101', u'201', u'Auditorium'],
+        missing_value=None,
+        required=False,
+        value_type=schema.TextLine()
+    )
+
+    types_of_talk = schema.List(
+        title=u'Available types for talks',
+        default=[u'Talk', u'Training', u'Keynote', u'Lightning Talk'],
+        missing_value=None,
+        required=False,
+        value_type=schema.TextLine(),
+    )
+
+    audiences = schema.List(
+        title=u'Available audiences for talks',
+        default=[u'Beginner', u'Advanced', u'Professionals'],
         missing_value=None,
         required=False,
         value_type=schema.TextLine()

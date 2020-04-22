@@ -18,7 +18,7 @@ class ITalk(model.Schema):
     directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(
         title=_(u'Type of talk'),
-        values=['Talk', 'Training', 'Keynote'],
+        vocabulary='ploneconf.types_of_talk',
         required=True,
         )
 
@@ -30,10 +30,11 @@ class ITalk(model.Schema):
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
+    directives.write_permission(audience='cmf.ReviewPortalContent')
     audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(
-            values=['Beginner', 'Advanced', 'Professionals'],
+            vocabulary='ploneconf.audiences',
             ),
         required=False,
         )
@@ -87,6 +88,26 @@ class ITalk(model.Schema):
         title=_(u'Speaker Biography (max. 1000 characters)'),
         max_length=1000,
         required=False,
+        )
+
+    directives.write_permission(slides='cmf.ReviewPortalContent')
+    slides = schema.TextLine(
+        title=_(u'URL of the Website that holds the slides'),
+        required=False,
+        )
+
+    directives.write_permission(video='cmf.ReviewPortalContent')
+    video = schema.TextLine(
+        title=_(u'URL of the Website that holds the video of the talk'),
+        required=False,
+        )
+
+    directives.write_permission(hide_date='cmf.ReviewPortalContent')
+    hide_date = schema.Bool(
+        title=_(u'Hide date and time'),
+        description=_(u'Display talks without date and time.'),
+        required=False,
+        default=True,
         )
 
 
