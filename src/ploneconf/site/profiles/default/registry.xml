@@ -46,4 +46,30 @@
   <records interface="ploneconf.site.browser.controlpanel.IPloneconfControlPanel"
            prefix="ploneconf" />
 
+  <record name="plone.types_not_searched">
+    <value purge="False">
+        <element>sponsor</element>
+    </value>
+  </record>
+
+  <record name="plone.displayed_types">
+    <value purge="False">
+        <element>talk</element>
+        <element>Collection</element>
+        <element>EasyForm</element>
+    </value>
+  </record>
+
+  <record name="plone.icon_visibility">
+    <value>false</value>
+  </record>
+
+  <record name="plone.mark_special_links">
+    <value>False</value>
+  </record>
+
+  <record name="plone.use_email_as_login">
+    <value>True</value>
+  </record>
+
 </registry>
