@@ -28,7 +28,7 @@ class IPloneconfControlPanel(Interface):
         default=[u'101', u'201', u'Auditorium'],
         missing_value=None,
         required=False,
-        value_type=schema.TextLine()
+        value_type=schema.TextLine(),
     )
 
     types_of_talk = schema.List(
@@ -41,16 +41,16 @@ class IPloneconfControlPanel(Interface):
 
     audiences = schema.List(
         title=u'Available audiences for talks',
-        default=[u'Beginner', u'Advanced', u'Professionals'],
+        default=[u'Beginner', u'Advanced', u'Professional'],
         missing_value=None,
         required=False,
-        value_type=schema.TextLine()
+        value_type=schema.TextLine(),
     )
 
 
 class PloneconfControlPanelForm(RegistryEditForm):
     schema = IPloneconfControlPanel
-    schema_prefix = "ploneconf"
+    schema_prefix = 'ploneconf'
     label = u'Ploneconf Settings'
 
 
