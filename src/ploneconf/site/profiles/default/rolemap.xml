@@ -5,19 +5,21 @@
     </roles>
 
   <permissions>
-        <permission name="ploneconf.site.addploneconfprofile"
-                    acquire="True">
-          <role name="Manager"/>
-          <role name="Site Administrator"/>
-          <role name="Anonymous"/>
-        </permission>
+    <!-- -*- extra stuff goes here -*- -->
 
-        <permission name="ploneconf.site.addploneconfcontent"
-                    acquire="True">
-          <role name="Manager"/>
-          <role name="Site Administrator"/>
-          <role name="Ploneconf Member"/>
-        </permission>
+    <permission name="ploneconf.site.AddSpeaker"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Anonymous"/>
+    </permission>
+
+    <permission name="ploneconf.site.AddTalk"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Ploneconf Member"/>
+    </permission>
   </permissions>
 
 </rolemap>

@@ -84,11 +84,11 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    speaker_biography = RichText(
-        title=_(u'Speaker Biography (max. 1000 characters)'),
-        max_length=1000,
-        required=False,
-        )
+    # speaker_biography = RichText(
+    #     title=_(u'Speaker Biography (max. 1000 characters)'),
+    #     max_length=1000,
+    #     required=False,
+    #     )
 
     directives.write_permission(slides='cmf.ReviewPortalContent')
     slides = schema.TextLine(

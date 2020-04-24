@@ -5,18 +5,17 @@
 
   <configure zcml:condition="installed AccessControl.security">
 
-  <permission
-    id="ploneconf.site.addploneconfprofile"
-    title="ploneconf.site.addploneconfprofile"
-  />
-
-  <permission
-    id="ploneconf.site.addploneconfcontent"
-    title="ploneconf.site.addploneconfcontent"
-  />
-
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission
+        id="ploneconf.site.AddSpeaker"
+        title="ploneconf.site: Add Speaker"
+    />
+
+    <permission
+        id="ploneconf.site.AddTalk"
+        title="ploneconf.site: Add Talk"
+    />
 
   </configure>
 
