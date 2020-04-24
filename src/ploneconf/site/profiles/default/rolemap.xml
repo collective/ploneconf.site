@@ -11,6 +11,7 @@
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
+      <role name="Contributor"/>
       <role name="Anonymous"/>
     </permission>
 
@@ -18,7 +19,24 @@
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
+      <role name="Contributor"/>
       <role name="Ploneconf Member"/>
+    </permission>
+
+    <permission name="ploneconf.site: Add Sponsor"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Contributor"/>
+    </permission>
+
+
+    <permission name="Add portal content" acquire="True">
+      <role name="Contributor"/>
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Ploneconf Member"/>
+      <role name="Site Administrator"/>
     </permission>
   </permissions>
 

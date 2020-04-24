@@ -8,6 +8,11 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="ploneconf.site.AddSponsor"
+        title="ploneconf.site: Add Sponsor"
+    />
+
+    <permission
         id="ploneconf.site.AddSpeaker"
         title="ploneconf.site: Add Speaker"
     />

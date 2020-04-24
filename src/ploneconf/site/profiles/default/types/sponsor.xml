@@ -17,7 +17,7 @@
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="add_permission">ploneconf.site.AddSponsor</property>
  <property name="klass">plone.dexterity.content.Container</property>
  <property name="behaviors">
   <element value="plone.dublincore"/>
