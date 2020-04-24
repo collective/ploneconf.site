@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
-# from plone.app.textfield import RichText
+from dexterity.membrane.behavior.user import DxUserObject
+from dexterity.membrane.content.member import IMember
+from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Container
 # from plone.namedfile import field as namedfile
-from plone.supermodel import model
+# from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
+from ploneconf.site import _
+from Products.membrane.interfaces import IMembraneUserRoles
 # from z3c.form.browser.radio import RadioFieldWidget
+from zope.component import adapter
 # from zope import schema
 from zope.interface import implementer
 
 
-# from ploneconf.site import _
-
-
-class ISpeaker(model.Schema):
+class ISpeaker(IMember):
     """ Marker interface and Dexterity Python Schema for Speaker
     """
     # If you want, you can load a xml model created TTW here
@@ -26,7 +28,7 @@ class ISpeaker(model.Schema):
         max_length=1000,
         required=False,
         )
-        
+
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
     #     title=_(u'Sponsoring Level'),
@@ -67,3 +69,14 @@ class ISpeaker(model.Schema):
 class Speaker(Container):
     """
     """
+
+
+DEFAULT_ROLES = ['Ploneconf Member', 'Member']
+
+
+@implementer(IMembraneUserRoles)
+@adapter(ISpeaker)
+class MyDefaultRoles(DxUserObject):
+
+    def getRolesForPrincipal(self, principal, request=None):
+        return DEFAULT_ROLES

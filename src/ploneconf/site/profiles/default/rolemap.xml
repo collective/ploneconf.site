@@ -7,14 +7,14 @@
   <permissions>
     <!-- -*- extra stuff goes here -*- -->
 
-    <permission name="ploneconf.site.AddSpeaker"
+    <permission name="ploneconf.site: Add Speaker"
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Anonymous"/>
     </permission>
 
-    <permission name="ploneconf.site.AddTalk"
+    <permission name="ploneconf.site: Add Talk"
                 acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
