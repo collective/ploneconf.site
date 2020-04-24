@@ -4,6 +4,17 @@
   i18n_domain="plone">
 
   <configure zcml:condition="installed AccessControl.security">
+
+  <permission
+    id="ploneconf.site.addploneconfprofile"
+    title="ploneconf.site.addploneconfprofile"
+  />
+
+  <permission
+    id="ploneconf.site.addploneconfcontent"
+    title="ploneconf.site.addploneconfcontent"
+  />
+
   <!-- -*- extra stuff goes here -*- -->
 
 

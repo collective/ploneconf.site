@@ -17,7 +17,7 @@
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="add_permission">ploneconf.site.addploneconfcontent</property>
  <property name="klass">ploneconf.site.content.talk.Talk</property>
  <property name="schema">ploneconf.site.content.talk.ITalk</property>
  <property name="behaviors">

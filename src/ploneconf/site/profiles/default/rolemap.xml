@@ -1,7 +1,23 @@
 <?xml version="1.0"?>
 <rolemap>
-  <permissions>
-  <!-- -*- extra stuff goes here -*- -->
+    <roles>
+      <role name="Ploneconf Member"/>
+    </roles>
 
+  <permissions>
+        <permission name="ploneconf.site.addploneconfprofile"
+                    acquire="True">
+          <role name="Manager"/>
+          <role name="Site Administrator"/>
+          <role name="Anonymous"/>
+        </permission>
+
+        <permission name="ploneconf.site.addploneconfcontent"
+                    acquire="True">
+          <role name="Manager"/>
+          <role name="Site Administrator"/>
+          <role name="Ploneconf Member"/>
+        </permission>
   </permissions>
+
 </rolemap>
