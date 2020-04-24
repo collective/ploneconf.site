@@ -55,6 +55,7 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'collective.folderishtypes[dexterity]',
+        'dexterity.membrane',
     ],
     extras_require={
         'test': [
