@@ -5,5 +5,7 @@
     <dependency>profile-collective.folderishtypes.dx:default</dependency>
     <dependency>profile-plone.restapi:blocks</dependency>
     <dependency>profile-plone.app.dexterity:default</dependency>
+    <dependency>profile-Products.membrane:default</dependency>
+    <dependency>profile-dexterity.membrane:default</dependency>
   </dependencies>
 </metadata>
