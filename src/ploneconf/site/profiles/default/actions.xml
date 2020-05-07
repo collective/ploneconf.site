@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<object name="portal_actions" meta_type="Plone Actions Tool"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <action-provider name="portal_workflow"/>
- <action-provider name="portal_types"/>
- <action-provider name="portal_actions"/>
+<object name="portal_actions"
+        meta_type="Plone Actions Tool"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
  <object name="user" meta_type="CMF Action Category">
   <property name="title">User actions</property>
 
   <object name="register_ploneconf" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Register</property>
    <property name="description" i18n:translate=""></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/++add++speaker</property>
+   <property name="url_expr">string:${globals_view/navigationRootUrl}/speakers/++add++speaker</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
    <property name="available_expr">python:member is None</property>
@@ -19,15 +17,13 @@
     <element value="View"/>
    </property>
    <property name="visible">True</property>
-   <property name="modal"
-      type="text">{&quot;prependContent&quot;: &quot;.portalMessage&quot;}</property>
+   <property name="modal" type="text">{&quot;prependContent&quot;: &quot;.portalMessage&quot;}</property>
   </object>
 
   <object name="join" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Register</property>
    <property name="description" i18n:translate=""></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/@@register</property>
+   <property name="url_expr">string:${globals_view/navigationRootUrl}/@@register</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
    <property name="available_expr">python:member is None</property>
@@ -35,8 +31,7 @@
     <element value="Add portal member"/>
    </property>
    <property name="visible">False</property>
-   <property name="modal"
-      type="text">{&quot;prependContent&quot;: &quot;.portalMessage&quot;}</property>
+   <property name="modal" type="text">{&quot;prependContent&quot;: &quot;.portalMessage&quot;}</property>
   </object>
 
  </object>

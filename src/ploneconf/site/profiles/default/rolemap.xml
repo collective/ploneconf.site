@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <rolemap>
-    <roles>
-      <role name="Ploneconf Member"/>
-    </roles>
+
+  <roles>
+    <role name="Ploneconf Member"/>
+  </roles>
 
   <permissions>
-    <!-- -*- extra stuff goes here -*- -->
-
     <permission name="ploneconf.site: Add Speaker"
                 acquire="True">
       <role name="Manager"/>
@@ -30,7 +29,6 @@
       <role name="Contributor"/>
     </permission>
 
-
     <permission name="Add portal content" acquire="True">
       <role name="Contributor"/>
       <role name="Manager"/>
@@ -38,6 +36,6 @@
       <role name="Ploneconf Member"/>
       <role name="Site Administrator"/>
     </permission>
-  </permissions>
 
+  </permissions>
 </rolemap>
