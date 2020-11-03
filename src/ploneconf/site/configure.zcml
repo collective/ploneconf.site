@@ -56,4 +56,11 @@
       name="ploneconf.audiences"
       component="ploneconf.site.vocabularies.AudiencesVocabulary" />
 
+
+  <!-- Profile -->
+  <adapter
+       factory=".content.speaker.MyDefaultRoles"
+       provides="Products.membrane.interfaces.IMembraneUserRoles"
+  />
+
 </configure>
