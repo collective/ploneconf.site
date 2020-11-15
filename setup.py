@@ -55,6 +55,7 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'collective.folderishtypes[dexterity]',
+        'starzel.votable_behavior',
     ],
     extras_require={
         'test': [
