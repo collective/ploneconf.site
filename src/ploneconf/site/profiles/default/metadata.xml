@@ -4,6 +4,5 @@
   <dependencies>
     <dependency>profile-collective.folderishtypes.dx:default</dependency>
     <dependency>profile-plone.restapi:blocks</dependency>
-    <!-- <dependency>profile-starzel.votable_behavior:default</dependency> -->
   </dependencies>
 </metadata>
