@@ -3,4 +3,5 @@
  <property name="title">Controls the available contenttypes in your portal</property>
  <object name="talk" meta_type="Dexterity FTI"/>
  <object name="sponsor" meta_type="Dexterity FTI"/>
+ <object meta_type="Dexterity FTI" name="Document" />
 </object>
