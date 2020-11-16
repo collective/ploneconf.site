@@ -19,10 +19,25 @@ class PloneconfSiteLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.restapi
+        import collective.folderishtypes
+        import plone.app.contenttypes
+        import kitconcept.volto
+        import kitconcept.volto.cors
+        # plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors 
         self.loadZCML(package=plone.restapi)
+        self.loadZCML(package=collective.folderishtypes)
+        self.loadZCML(package=plone.app.contenttypes)
+        self.loadZCML(package=kitconcept.volto)
+        self.loadZCML(package=kitconcept.volto.cors)
         self.loadZCML(package=ploneconf.site)
 
     def setUpPloneSite(self, portal):
+        # plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage
+        # applyProfile(portal, 'plone.restapi:default')
+        applyProfile(portal, 'collective.folderishtypes.dx:default')
+        # applyProfile(portal, 'plone.app.contenttypes:plone-content')
+        applyProfile(portal, 'kitconcept.volto:default')
+        # applyProfile(portal, 'kitconcept.volto:default-homepage')
         applyProfile(portal, 'ploneconf.site:default')
 
 

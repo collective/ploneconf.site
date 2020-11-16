@@ -55,6 +55,7 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'collective.folderishtypes[dexterity]',
+        'kitconcept.volto',
     ],
     extras_require={
         'test': [
