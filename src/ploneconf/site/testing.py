@@ -36,8 +36,8 @@ class PloneconfSiteLayer(PloneSandboxLayer):
         # applyProfile(portal, 'plone.restapi:default')
         applyProfile(portal, 'collective.folderishtypes.dx:default')
         # applyProfile(portal, 'plone.app.contenttypes:plone-content')
-        applyProfile(portal, 'kitconcept.volto:default')
-        # applyProfile(portal, 'kitconcept.volto:default-homepage')
+        # applyProfile(portal, 'kitconcept.volto:default')
+        applyProfile(portal, 'kitconcept.volto:default-homepage')
         applyProfile(portal, 'ploneconf.site:default')
 
 
