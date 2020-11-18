@@ -16,14 +16,13 @@ class PloneconfSiteLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load any other ZCML that is required for your tests.
-        # The z3c.autoinclude feature is disabled in the Plone fixture base
-        # layer.
-        import plone.restapi
+        # The z3c.autoinclude feature is disabled in the Plone fixture base layer.
         import collective.folderishtypes
-        import plone.app.contenttypes
         import kitconcept.volto
         import kitconcept.volto.cors
-        # plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors 
+        import plone.app.contenttypes
+        import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.folderishtypes)
         self.loadZCML(package=plone.app.contenttypes)

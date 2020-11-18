@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from ploneconf.site.testing import PLONECONF_SITE_INTEGRATION_TESTING  # noqa: E501
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from ploneconf.site.testing import PLONECONF_SITE_INTEGRATION_TESTING  # noqa: E501
 
 import unittest
 
@@ -34,9 +34,8 @@ class TestSetup(unittest.TestCase):
 
     def test_browserlayer(self):
         """Test that IPloneconfSiteLayer is registered."""
-        from ploneconf.site.interfaces import (
-            IPloneconfSiteLayer)
         from plone.browserlayer import utils
+        from ploneconf.site.interfaces import IPloneconfSiteLayer
         self.assertIn(
             IPloneconfSiteLayer,
             utils.registered_layers())
@@ -64,9 +63,8 @@ class TestUninstall(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         """Test that IPloneconfSiteLayer is removed."""
-        from ploneconf.site.interfaces import \
-            IPloneconfSiteLayer
         from plone.browserlayer import utils
+        from ploneconf.site.interfaces import IPloneconfSiteLayer
         self.assertNotIn(
             IPloneconfSiteLayer,
             utils.registered_layers())

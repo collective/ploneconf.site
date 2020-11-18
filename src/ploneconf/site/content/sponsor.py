@@ -17,8 +17,8 @@ LevelVocabulary = SimpleVocabulary(
     [SimpleTerm(value=u'platinum', title=_(u'Platinum Sponsor')),
      SimpleTerm(value=u'gold', title=_(u'Gold Sponsor')),
      SimpleTerm(value=u'silver', title=_(u'Silver Sponsor')),
-     SimpleTerm(value=u'bronze', title=_(u'Bronze Sponsor'))]
-    )
+     SimpleTerm(value=u'bronze', title=_(u'Bronze Sponsor'))],
+)
 
 
 class ISponsor(model.Schema):
@@ -29,17 +29,17 @@ class ISponsor(model.Schema):
     level = schema.Choice(
         title=_(u'Sponsoring Level'),
         vocabulary=LevelVocabulary,
-        required=True
+        required=True,
     )
 
     text = RichText(
         title=_(u'Text'),
-        required=False
+        required=False,
     )
 
     url = schema.URI(
         title=_(u'Link'),
-        required=False
+        required=False,
     )
 
     fieldset('Images', fields=['logo', 'advertisment'])
@@ -57,7 +57,7 @@ class ISponsor(model.Schema):
     directives.write_permission(notes='cmf.ManagePortal')
     notes = RichText(
         title=_(u'Secret Notes (only for site-admins)'),
-        required=False
+        required=False,
     )
 
 

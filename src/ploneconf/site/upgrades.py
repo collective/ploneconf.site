@@ -5,6 +5,7 @@ from plone.app.upgrade.utils import loadMigrationProfile
 
 import logging
 
+
 default_profile = 'profile-ploneconf.site:default'
 logger = logging.getLogger(__name__)
 
@@ -23,13 +24,11 @@ def upgrade_site(setup):
 
     # Create the expected folder-structure
     if 'training' not in portal:
-        training_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='training',
             title=u'Training')
-    else:
-        training_folder = portal['training']
 
     if 'schedule' not in portal:
         schedule_folder = api.content.create(
@@ -42,31 +41,25 @@ def upgrade_site(setup):
     schedule_folder_url = schedule_folder.absolute_url()
 
     if 'location' not in portal:
-        location_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='location',
             title=u'Location')
-    else:
-        location_folder = portal['location']
 
     if 'sponsors' not in portal:
-        sponsors_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='sponsors',
             title=u'Sponsors')
-    else:
-        sponsors_folder = portal['sponsors']
 
     if 'sprint' not in portal:
-        sprint_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='sprint',
             title=u'Sprint')
-    else:
-        sprint_folder = portal['sprint']
 
     # Find all talks
     brains = api.content.find(portal_type='talk')
@@ -75,13 +68,14 @@ def upgrade_site(setup):
             # Skip if the talk is already somewhere inside the target folder
             continue
         obj = brain.getObject()
-        logger.info('Moving {} to {}'.format(
+        logger.info('Moving {0} to {1}'.format(
             obj.absolute_url(), schedule_folder_url))
         # Move talk to the folder '/the-event/talks'
         api.content.move(
             source=obj,
             target=schedule_folder,
             safe_id=True)
+
 
 def install_kitconcept_volto(setup):
     logger.info('install add-ons like kitconcept.volto and restore folderish behavior')

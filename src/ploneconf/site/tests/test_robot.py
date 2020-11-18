@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from ploneconf.site.testing import PLONECONF_SITE_ACCEPTANCE_TESTING  # noqa: E501
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
+from ploneconf.site.testing import PLONECONF_SITE_ACCEPTANCE_TESTING  # noqa: E501
 
 import os
 import robotsuite

@@ -6,6 +6,7 @@ from zope.interface import implementer
 
 import logging
 
+
 logger = logging.getLogger(__name__)
 PROFILE_ID = 'profile-ploneconf.site:default'
 
@@ -33,16 +34,14 @@ def set_up_content(portal):
     """
     # Create the expected folder-structure
     if 'training' not in portal:
-        training_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='training',
             title=u'Training')
-    else:
-        training_folder = portal['training']
 
     if 'schedule' not in portal:
-        schedule_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='schedule',
@@ -51,31 +50,25 @@ def set_up_content(portal):
         schedule_folder = portal['schedule']
 
     if 'location' not in portal:
-        location_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='location',
             title=u'Location')
-    else:
-        location_folder = portal['location']
 
     if 'sponsors' not in portal:
-        sponsors_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='sponsors',
             title=u'Sponsors')
-    else:
-        sponsors_folder = portal['sponsors']
 
     if 'sprint' not in portal:
-        sprint_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='sprint',
             title=u'Sprint')
-    else:
-        sprint_folder = portal['sprint']
 
     # Allow logged-in users to create content
     api.group.grant_roles(
