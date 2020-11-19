@@ -41,7 +41,7 @@ def set_up_content(portal):
             title=u'Training')
 
     if 'schedule' not in portal:
-        api.content.create(
+        schedule_folder = api.content.create(
             container=portal,
             type='Document',
             id='schedule',
