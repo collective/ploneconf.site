@@ -22,12 +22,4 @@
       profile="ploneconf.site:default"
       />
 
-  <genericsetup:upgradeStep
-      source="1001"
-      destination="1002"
-      title="Install kitconcept.volto"
-      description=""
-      profile="ploneconf.site:default"
-      handler=".upgrades.install_kitconcept_volto"
-      />
 </configure>

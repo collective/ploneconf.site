@@ -75,9 +75,3 @@ def upgrade_site(setup):
             source=obj,
             target=schedule_folder,
             safe_id=True)
-
-
-def install_kitconcept_volto(setup):
-    logger.info('install add-ons like kitconcept.volto and restore folderish behavior')
-    setup.runImportStepFromProfile(default_profile, 'metadata')
-    setup.runImportStepFromProfile(default_profile, 'typeinfo')
