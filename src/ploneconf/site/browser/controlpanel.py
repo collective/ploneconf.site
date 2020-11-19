@@ -2,8 +2,10 @@
 from datetime import date
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.restapi.controlpanels import RegistryConfigletPanel
 from plone.z3cform import layout
 from zope import schema
+from zope.component import adapter
 from zope.interface import Interface
 
 
@@ -12,7 +14,7 @@ class IPloneconfControlPanel(Interface):
     date_of_conference = schema.Date(
         title=u'First day of the conference',
         required=False,
-        default=date(2050, 9, 13),
+        default=date(2035, 9, 13),
     )
 
     talk_submission_open = schema.Bool(
@@ -55,3 +57,11 @@ class PloneconfControlPanelForm(RegistryEditForm):
 
 PloneconfControlPanelView = layout.wrap_form(
     PloneconfControlPanelForm, ControlPanelFormWrapper)
+
+
+@adapter(Interface, Interface)
+class PloneconfControlPanel(RegistryConfigletPanel):
+    schema = IPloneconfControlPanel
+    schema_prefix = 'ploneconf'
+    configlet_id = 'ploneconf-controlpanel'
+    configlet_category_id = 'Products'

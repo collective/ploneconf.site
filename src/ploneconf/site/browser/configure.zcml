@@ -27,4 +27,8 @@
       permission="cmf.ManagePortal"
       />
 
+  <adapter
+      factory="ploneconf.site.browser.controlpanel.PloneconfControlPanel"
+      name="ploneconf-controlpanel" />
+
 </configure>
