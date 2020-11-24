@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+  <record name="plone.enable_self_reg">
+    <value>True</value>
+  </record>
+
+  <record name="plone.types_not_searched">
+    <value purge="False">
+        <element>sponsor</element>
+    </value>
+  </record>
+
+  <record name="plone.displayed_types">
+    <value purge="False">
+        <element>talk</element>
+        <element>Collection</element>
+        <element>EasyForm</element>
+    </value>
+  </record>
+
+  <record name="plone.icon_visibility">
+    <value>false</value>
+  </record>
+
+  <record name="plone.mark_special_links">
+    <value>False</value>
+  </record>
+
+  <record name="plone.use_email_as_login">
+    <value>True</value>
+  </record>
+
+</registry>
