@@ -37,7 +37,7 @@ setup(
         'PyPI': 'https://pypi.python.org/pypi/ploneconf.site',
         'Source': 'https://github.com/collective/ploneconf.site',
         'Tracker': 'https://github.com/collective/ploneconf.site/issues',
-        # 'Documentation': 'https://ploneconf.site.readthedocs.io/en/latest/',
+        'Documentation': 'https://training.plone.org',
     },
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
@@ -54,7 +54,7 @@ setup(
         'plone.restapi',
         'plone.app.dexterity',
         'collective.folderishtypes[dexterity]',
-        'kitconcept.volto',
+        'plone.app.upgrade',
     ],
     extras_require={
         'test': [

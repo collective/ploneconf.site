@@ -18,25 +18,18 @@ class PloneconfSiteLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base layer.
         import collective.folderishtypes
-        import kitconcept.volto
-        import kitconcept.volto.cors
         import plone.app.contenttypes
         import plone.restapi
 
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.folderishtypes)
         self.loadZCML(package=plone.app.contenttypes)
-        self.loadZCML(package=kitconcept.volto)
-        self.loadZCML(package=kitconcept.volto.cors)
         self.loadZCML(package=ploneconf.site)
 
     def setUpPloneSite(self, portal):
-        # plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage
         # applyProfile(portal, 'plone.restapi:default')
         applyProfile(portal, 'collective.folderishtypes.dx:default')
         # applyProfile(portal, 'plone.app.contenttypes:plone-content')
-        # applyProfile(portal, 'kitconcept.volto:default')
-        applyProfile(portal, 'kitconcept.volto:default-homepage')
         applyProfile(portal, 'ploneconf.site:default')
 
 
