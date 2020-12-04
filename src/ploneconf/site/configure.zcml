@@ -41,6 +41,16 @@
       name="ploneconf.site-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <utility
+      name="ploneconf.types_of_talk"
+      component="ploneconf.site.vocabularies.TalkTypesVocabulary" />
+
+  <utility
+      name="ploneconf.audiences"
+      component="ploneconf.site.vocabularies.AudiencesVocabulary" />
+
+  <utility
+      name="ploneconf.rooms"
+      component="ploneconf.site.vocabularies.RoomsVocabularyFactory" />
 
 </configure>
