@@ -18,4 +18,15 @@
       directory="static"
       />
 
+  <browser:page
+      name="ploneconf-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.PloneconfControlPanelView"
+      permission="cmf.ManagePortal"
+      />
+
+  <adapter
+      factory="ploneconf.site.browser.controlpanel.PloneconfControlPanel"
+      name="ploneconf-controlpanel" />
+
 </configure>
