@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- kitconcept is purging plone.constraintypes behavior -->
 <object name="Document" meta_type="Dexterity FTI" i18n:domain="plone"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="filter_content_types" purge="false">False</property>
