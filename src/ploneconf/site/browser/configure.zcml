@@ -21,12 +21,13 @@
   <browser:page
       name="ploneconf-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class=".controlpanel.PloneconfControlPanelView"
+      class=".controlpanel.PloneConfControlPanelFormWrapper"
       permission="cmf.ManagePortal"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       />
 
   <adapter
-      factory="ploneconf.site.browser.controlpanel.PloneconfControlPanel"
+      factory="ploneconf.site.browser.controlpanel.PloneConfRegistryConfigletPanel"
       name="ploneconf-controlpanel" />
 
 </configure>
