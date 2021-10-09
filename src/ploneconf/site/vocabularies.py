@@ -11,57 +11,18 @@ from zope.schema.vocabulary import SimpleVocabulary
 def RoomsVocabularyFactory(context):
     name = "ploneconf.rooms"
     registry_record_value = api.portal.get_registry_record(name)
-    # Use safe_simplevocabulary_from_values
-    # as soon as safe_simplevocabulary_from_values accepts a dictionary as argument
-    # return safe_simplevocabulary_from_values(values)
-
-    normalizer = getUtility(IIDNormalizer)
-    terms = [
-        SimpleVocabulary.createTerm(
-            normalizer.normalize(value),
-            normalizer.normalize(value),
-            registry_record_value[value],
-        )
-        for value in registry_record_value
-    ]
-    return SimpleVocabulary(terms)
+    return SimpleVocabulary.fromItems([[el[0], el[0], el[1]] for el in registry_record_value.items()])
 
 
 @provider(IVocabularyFactory)
 def TalkTypesVocabulary(context):
     name = "ploneconf.types_of_talk"
     registry_record_value = api.portal.get_registry_record(name)
-    # Use safe_simplevocabulary_from_values
-    # as soon as safe_simplevocabulary_from_values accepts a dictionary as argument
-    # return safe_simplevocabulary_from_values(values)
-
-    normalizer = getUtility(IIDNormalizer)
-    terms = [
-        SimpleVocabulary.createTerm(
-            normalizer.normalize(value),
-            normalizer.normalize(value),
-            registry_record_value[value],
-        )
-        for value in registry_record_value
-    ]
-    return SimpleVocabulary(terms)
+    return SimpleVocabulary.fromItems([[el[0], el[0], el[1]] for el in registry_record_value.items()])
 
 
 @provider(IVocabularyFactory)
 def AudiencesVocabulary(context):
     name = "ploneconf.audiences"
     registry_record_value = api.portal.get_registry_record(name)
-    # Use safe_simplevocabulary_from_values
-    # as soon as safe_simplevocabulary_from_values accepts a dictionary as argument
-    # return safe_simplevocabulary_from_values(values)
-
-    normalizer = getUtility(IIDNormalizer)
-    terms = [
-        SimpleVocabulary.createTerm(
-            normalizer.normalize(value),
-            normalizer.normalize(value),
-            registry_record_value[value],
-        )
-        for value in registry_record_value
-    ]
-    return SimpleVocabulary(terms)
+    return SimpleVocabulary.fromItems([[el[0], el[0], el[1]] for el in registry_record_value.items()])
