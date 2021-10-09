@@ -14,8 +14,8 @@ long_description = '\n\n'.join([
 
 setup(
     name='ploneconf.site',
-    version='1.0a1',
-    description="An add-on for Plone",
+    version='1.0',
+    description="Training code for Mastering Plone Development",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
