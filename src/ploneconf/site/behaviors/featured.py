@@ -9,6 +9,6 @@ from zope.interface import provider
 class IFeatured(model.Schema):
 
     featured = schema.Bool(
-        title=u'Show this item on the frontpage',
+        title=u"Show this item on the frontpage",
         required=False,
     )

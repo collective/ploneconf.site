@@ -21,11 +21,12 @@ class PloneconfSiteLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=ploneconf.site)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'ploneconf.site:default')
+        applyProfile(portal, "ploneconf.site:default")
 
 
 PLONECONF_SITE_FIXTURE = PloneconfSiteLayer()
@@ -33,13 +34,13 @@ PLONECONF_SITE_FIXTURE = PloneconfSiteLayer()
 
 PLONECONF_SITE_INTEGRATION_TESTING = IntegrationTesting(
     bases=(PLONECONF_SITE_FIXTURE,),
-    name='PloneconfSiteLayer:IntegrationTesting',
+    name="PloneconfSiteLayer:IntegrationTesting",
 )
 
 
 PLONECONF_SITE_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(PLONECONF_SITE_FIXTURE,),
-    name='PloneconfSiteLayer:FunctionalTesting',
+    name="PloneconfSiteLayer:FunctionalTesting",
 )
 
 
@@ -49,5 +50,5 @@ PLONECONF_SITE_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='PloneconfSiteLayer:AcceptanceTesting',
+    name="PloneconfSiteLayer:AcceptanceTesting",
 )
