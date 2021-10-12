@@ -21,15 +21,6 @@ def upgrade_site(context=None):
     portal = api.portal.get()
 
     # Create the expected folder-structure
-    if 'training' not in portal:
-        training_folder = api.content.create(
-            container=portal,
-            type='Document',
-            id='training',
-            title=u'Training')
-    else:
-        training_folder = portal['training']
-
     if 'schedule' not in portal:
         schedule_folder = api.content.create(
             container=portal,
@@ -40,34 +31,14 @@ def upgrade_site(context=None):
         schedule_folder = portal['schedule']
     schedule_folder_url = schedule_folder.absolute_url()
 
-    if 'location' not in portal:
-        location_folder = api.content.create(
-            container=portal,
-            type='Document',
-            id='location',
-            title=u'Location')
-    else:
-        location_folder = portal['location']
-
     if 'sponsors' not in portal:
-        sponsors_folder = api.content.create(
+        api.content.create(
             container=portal,
             type='Document',
             id='sponsors',
             title=u'Sponsors')
-    else:
-        sponsors_folder = portal['sponsors']
 
-    if 'sprint' not in portal:
-        sprint_folder = api.content.create(
-            container=portal,
-            type='Document',
-            id='sprint',
-            title=u'Sprint')
-    else:
-        sprint_folder = portal['sprint']
-
-    # Find all talks
+    # Find all talks and move to schedule
     brains = api.content.find(portal_type='talk')
     for brain in brains:
         if schedule_folder_url in brain.getURL():
