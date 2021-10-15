@@ -1,9 +1,36 @@
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.autoform import directives
 from plone.restapi.controlpanels import RegistryConfigletPanel
-from zope import schema
+from plone import schema
 from zope.component import adapter
 from zope.interface import Interface
+
+import json
+
+VOCABULARY_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "items": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "token": {"type": "string"},
+                        "titles": {
+                            "type": "object",
+                            "properties": {
+                                "lang": {"type": "string"},
+                                "title": {"type": "string"},
+                            }
+                        },
+                    }
+                }
+            }
+        },
+    }
+)
 
 
 class IPloneconfSettings(Interface):
@@ -15,48 +42,106 @@ class IPloneconfSettings(Interface):
         required=False,
     )
 
-    types_of_talk = schema.Dict(
+    types_of_talk = schema.JSONField(
         title="Types of Talk",
         description="Available types of a talk",
-        default={
-            "talk": "Talk",
-            "training": "Training",
-            "keynote": "Keynote",
-            "lightning-talk": "Lightning Talk",
-        },
-        missing_value={},
         required=False,
-        key_type=schema.TextLine(),
-        value_type=schema.TextLine(),
+        schema=VOCABULARY_SCHEMA,
+        default={"items": [
+            {
+                "token": "talk",
+                "titles": {
+                    "en": "Talk",
+                    "de": "Vortrag",
+                }
+            },
+            {
+                "token": "lightning-talk",
+                "titles": {
+                    "en": "Lightning-Talk",
+                    "de": "Lightning-Talk",
+                }
+            },
+        ]},
+        missing_value={"items": []},
     )
+    directives.widget(
+        'types_of_talk',
+        frontendOptions={
+            "widget": 'vocabularyterms',
+        })
 
-    audiences = schema.Dict(
+    audiences = schema.JSONField(
         title="Audience",
         description="Available audiences of a talk",
-        default={
-            "beginner": "Beginner",
-            "advanced": "Advanced",
-            "professional": "Professional",
-        },
-        missing_value={},
         required=False,
-        key_type=schema.TextLine(),
-        value_type=schema.TextLine(),
+        schema=VOCABULARY_SCHEMA,
+        default={"items": [
+            {
+                "token": "beginner",
+                "titles": {
+                    "en": "Beginner",
+                    "de": "Anfänger",
+                }
+            },
+            {
+                "token": "advanced",
+                "titles": {
+                    "en": "Advanced",
+                    "de": "Fortgeschrittene",
+                }
+            },
+            {
+                "token": "professional",
+                "titles": {
+                    "en": "Professional",
+                    "de": "Profi",
+                }
+            },
+        ]},
+        missing_value={"items": []},
     )
+    directives.widget(
+        'audiences',
+        frontendOptions={
+            "widget": 'vocabularyterms',
+        })
 
-    rooms = schema.Dict(
+    rooms = schema.JSONField(
         title="Rooms",
         description="Available rooms of the conference",
-        default={
-            "101": "101",
-            "201": "201",
-            "auditorium": "Auditorium",
-        },
-        missing_value={},
         required=False,
-        key_type=schema.TextLine(),
-        value_type=schema.TextLine(),
+        schema=VOCABULARY_SCHEMA,
+        default={"items": [
+            {
+                "token": "101",
+                "titles": {
+                    "en": "101",
+                    "de": "101",
+                }
+            },
+            {
+                "token": "201",
+                "titles": {
+                    "en": "201",
+                    "de": "201",
+                }
+            },
+            {
+                "token": "auditorium",
+                "titles": {
+                    "en": "Auditorium",
+                    "de": "Auditorium",
+                }
+            },
+        ]},
+        missing_value={"items": []},
     )
+    directives.widget(
+        'rooms',
+        frontendOptions={
+            "widget": 'vocabularyterms',
+        })
 
 
 class PloneconfRegistryEditForm(RegistryEditForm):

@@ -8,7 +8,7 @@ from plone.supermodel import model
 from ploneconf.site import _
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.browser.radio import RadioFieldWidget
-from zope import schema
+from plone import schema
 from zope.interface import implementer
 
 
