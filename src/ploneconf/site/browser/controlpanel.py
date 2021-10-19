@@ -23,10 +23,10 @@ VOCABULARY_SCHEMA = json.dumps(
                             "properties": {
                                 "lang": {"type": "string"},
                                 "title": {"type": "string"},
-                            }
+                            },
                         },
-                    }
-                }
+                    },
+                },
             }
         },
     }
@@ -47,107 +47,116 @@ class IPloneconfSettings(Interface):
         description="Available types of a talk",
         required=False,
         schema=VOCABULARY_SCHEMA,
-        default={"items": [
-            {
-                "token": "talk",
-                "titles": {
-                    "en": "Talk",
-                    "de": "Vortrag",
-                }
-            },
-            {
-                "token": "lightning-talk",
-                "titles": {
-                    "en": "Lightning-Talk",
-                    "de": "Lightning-Talk",
-                }
-            },
-        ]},
+        default={
+            "items": [
+                {
+                    "token": "talk",
+                    "titles": {
+                        "en": "Talk",
+                        "de": "Vortrag",
+                    },
+                },
+                {
+                    "token": "lightning-talk",
+                    "titles": {
+                        "en": "Lightning-Talk",
+                        "de": "Lightning-Talk",
+                    },
+                },
+            ]
+        },
         missing_value={"items": []},
     )
     directives.widget(
-        'types_of_talk',
+        "types_of_talk",
         frontendOptions={
-            "widget": 'vocabularyterms',
-        })
+            "widget": "vocabularyterms",
+        },
+    )
 
     audiences = schema.JSONField(
         title="Audience",
         description="Available audiences of a talk",
         required=False,
         schema=VOCABULARY_SCHEMA,
-        default={"items": [
-            {
-                "token": "beginner",
-                "titles": {
-                    "en": "Beginner",
-                    "de": "Anfänger",
-                }
-            },
-            {
-                "token": "advanced",
-                "titles": {
-                    "en": "Advanced",
-                    "de": "Fortgeschrittene",
-                }
-            },
-            {
-                "token": "professional",
-                "titles": {
-                    "en": "Professional",
-                    "de": "Profi",
-                }
-            },
-        ]},
+        default={
+            "items": [
+                {
+                    "token": "beginner",
+                    "titles": {
+                        "en": "Beginner",
+                        "de": "Anfänger",
+                    },
+                },
+                {
+                    "token": "advanced",
+                    "titles": {
+                        "en": "Advanced",
+                        "de": "Fortgeschrittene",
+                    },
+                },
+                {
+                    "token": "professional",
+                    "titles": {
+                        "en": "Professional",
+                        "de": "Profi",
+                    },
+                },
+            ]
+        },
         missing_value={"items": []},
     )
     directives.widget(
-        'audiences',
+        "audiences",
         frontendOptions={
-            "widget": 'vocabularyterms',
-        })
+            "widget": "vocabularyterms",
+        },
+    )
 
     rooms = schema.JSONField(
         title="Rooms",
         description="Available rooms of the conference",
         required=False,
         schema=VOCABULARY_SCHEMA,
-        default={"items": [
-            {
-                "token": "101",
-                "titles": {
-                    "en": "101",
-                    "de": "101",
-                }
-            },
-            {
-                "token": "201",
-                "titles": {
-                    "en": "201",
-                    "de": "201",
-                }
-            },
-            {
-                "token": "auditorium",
-                "titles": {
-                    "en": "Auditorium",
-                    "de": "Auditorium",
-                }
-            },
-        ]},
+        default={
+            "items": [
+                {
+                    "token": "101",
+                    "titles": {
+                        "en": "101",
+                        "de": "101",
+                    },
+                },
+                {
+                    "token": "201",
+                    "titles": {
+                        "en": "201",
+                        "de": "201",
+                    },
+                },
+                {
+                    "token": "auditorium",
+                    "titles": {
+                        "en": "Auditorium",
+                        "de": "Auditorium",
+                    },
+                },
+            ]
+        },
         missing_value={"items": []},
     )
     directives.widget(
-        'rooms',
+        "rooms",
         frontendOptions={
-            "widget": 'vocabularyterms',
-        })
+            "widget": "vocabularyterms",
+        },
+    )
 
 
 class PloneconfRegistryEditForm(RegistryEditForm):
     schema = IPloneconfSettings
-    schema_prefix = 'ploneconf'
-    label = 'Ploneconf Settings'
+    schema_prefix = "ploneconf"
+    label = "Ploneconf Settings"
 
 
 class PloneConfControlPanelFormWrapper(ControlPanelFormWrapper):
@@ -157,9 +166,10 @@ class PloneConfControlPanelFormWrapper(ControlPanelFormWrapper):
 @adapter(Interface, Interface)
 class PloneConfRegistryConfigletPanel(RegistryConfigletPanel):
     """Volto control panel"""
+
     schema = IPloneconfSettings
-    schema_prefix = 'ploneconf'
-    configlet_id = 'ploneconf-controlpanel'
-    configlet_category_id = 'Products'
-    title = 'Ploneconf Settings'
-    group = 'Products'
+    schema_prefix = "ploneconf"
+    configlet_id = "ploneconf-controlpanel"
+    configlet_category_id = "Products"
+    title = "Ploneconf Settings"
+    group = "Products"

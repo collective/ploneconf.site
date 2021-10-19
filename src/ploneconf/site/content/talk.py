@@ -13,7 +13,7 @@ from zope.interface import implementer
 
 
 class ITalk(model.Schema):
-    """Dexterity-Schema for Talks"""
+    """Define a content type schema for Talks"""
 
     directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(

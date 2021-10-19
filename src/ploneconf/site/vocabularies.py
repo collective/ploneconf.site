@@ -8,24 +8,30 @@ from zope.schema.vocabulary import SimpleVocabulary
 def TalkTypesVocabulary(context):
     name = "ploneconf.types_of_talk"
     registry_record_value = api.portal.get_registry_record(name)
-    items = registry_record_value.get('items', [])
+    items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
-    return SimpleVocabulary.fromItems([[item['token'], item['token'], item['titles'][lang]] for item in items])
+    return SimpleVocabulary.fromItems(
+        [[item["token"], item["token"], item["titles"][lang]] for item in items]
+    )
 
 
 @provider(IVocabularyFactory)
 def AudiencesVocabulary(context):
     name = "ploneconf.audiences"
     registry_record_value = api.portal.get_registry_record(name)
-    items = registry_record_value.get('items', [])
+    items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
-    return SimpleVocabulary.fromItems([[item['token'], item['token'], item['titles'][lang]] for item in items])
+    return SimpleVocabulary.fromItems(
+        [[item["token"], item["token"], item["titles"][lang]] for item in items]
+    )
 
 
 @provider(IVocabularyFactory)
 def RoomsVocabularyFactory(context):
     name = "ploneconf.rooms"
     registry_record_value = api.portal.get_registry_record(name)
-    items = registry_record_value.get('items', [])
+    items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
-    return SimpleVocabulary.fromItems([[item['token'], item['token'], item['titles'][lang]] for item in items])
+    return SimpleVocabulary.fromItems(
+        [[item["token"], item["token"], item["titles"][lang]] for item in items]
+    )

@@ -56,23 +56,19 @@ def post_install(context):
     create_volto_homepage(HOMEPAGE)
 
 
-def create_volto_homepage(default_home=None):
-    if default_home:
-        portal = api.portal.get()
-        blocks = default_home["blocks"]
-        blocks_layout = default_home["blocks_layout"]
+def create_volto_homepage(default_home=HOMEPAGE):
+    portal = api.portal.get()
+    blocks = default_home["blocks"]
+    blocks_layout = default_home["blocks_layout"]
 
-        portal.setTitle(default_home["title"])
-        portal.setDescription(default_home["description"])
+    portal.setTitle(default_home["title"])
+    portal.setDescription(default_home["description"])
 
-        if not getattr(portal, "blocks", False):
-            portal.manage_addProperty("blocks", json.dumps(blocks), "string")
+    if not getattr(portal, "blocks", False):
+        portal.manage_addProperty("blocks", json.dumps(blocks), "string")
 
-        if not getattr(portal, "blocks_layout", False):
-            portal.manage_addProperty(
-                "blocks_layout", json.dumps(blocks_layout), "string"
-            )
-        logger.info("Creating custom default homepage in Plone site root.")
+    if not getattr(portal, "blocks_layout", False):
+        portal.manage_addProperty("blocks_layout", json.dumps(blocks_layout), "string")
 
 
 def uninstall(context):
