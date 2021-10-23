@@ -18,7 +18,7 @@ class ITalk(model.Schema):
     directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(
         title='Type of talk',
-        values=['Talk', 'Training', 'Keynote'],
+        vocabulary='ploneconf.types_of_talk',
         required=True,
     )
 
@@ -32,9 +32,7 @@ class ITalk(model.Schema):
     directives.widget(audience=CheckBoxFieldWidget)
     audience = schema.Set(
         title='Audience',
-        value_type=schema.Choice(
-            values=['Beginner', 'Advanced', 'Professional'],
-        ),
+        value_type=schema.Choice(vocabulary='ploneconf.audiences'),
         required=False,
     )
 
@@ -79,6 +77,12 @@ class ITalk(model.Schema):
     speaker_biography = RichText(
         title='Speaker Biography (max. 1000 characters)',
         max_length=1000,
+        required=False,
+    )
+
+    room = schema.Choice(
+        title='Room',
+        vocabulary='ploneconf.rooms',
         required=False,
     )
 
