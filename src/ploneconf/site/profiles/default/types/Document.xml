@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="Document" meta_type="Dexterity FTI" i18n:domain="plone"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+    <property name="view_methods" purge="false">
+        <element value="talklist_view"/>
+    </property>
+    <property name="filter_content_types" purge="false">False</property>
+    <property name="behaviors" purge="false">
+        <element value="plone.constraintypes"/>
+    </property>
+
+</object>
