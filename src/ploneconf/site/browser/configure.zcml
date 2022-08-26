@@ -4,6 +4,8 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="ploneconf.site">
 
+  <include package="Products.CMFCore" />
+
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
@@ -17,5 +19,17 @@
       type="plone"
       directory="static"
       />
+
+  <browser:page
+      name="ploneconf-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.PloneConfControlPanelFormWrapper"
+      permission="cmf.ManagePortal"
+      layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
+      />
+
+  <adapter
+      factory="ploneconf.site.browser.controlpanel.PloneConfRegistryConfigletPanel"
+      name="ploneconf-controlpanel" />
 
 </configure>
