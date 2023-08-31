@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_catalog">
-  <!--<column value="my_meta_column"/>-->
+  <index name="type_of_talk" meta_type="KeywordIndex">
+    <indexed_attr value="type_of_talk"/>
+  </index>
+  <column value="type_of_talk"/>
 </object>
