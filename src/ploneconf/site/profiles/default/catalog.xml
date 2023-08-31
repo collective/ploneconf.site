@@ -4,4 +4,8 @@
     <indexed_attr value="type_of_talk"/>
   </index>
   <column value="type_of_talk"/>
+  <index name="featured" meta_type="BooleanIndex">
+    <indexed_attr value="featured"/>
+  </index>
+  <column value="featured"/>
 </object>

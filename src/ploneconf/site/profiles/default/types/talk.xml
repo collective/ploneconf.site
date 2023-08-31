@@ -26,6 +26,7 @@
         <element value="plone.versioning" />
         <element value="ploneconf.featured"/>
         <element value="plone.eventbasic"/>
+        <element value="ploneconf.featured" />
     </property>
     <property name="model_source"></property>
     <property name="model_file"></property>
