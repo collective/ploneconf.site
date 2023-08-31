@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="ploneconf.site"
-      remove="True"
+      remove="true"
       />
 </layers>

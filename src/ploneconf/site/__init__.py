@@ -3,4 +3,4 @@
 from zope.i18nmessageid import MessageFactory
 
 
-_ = MessageFactory('ploneconf.site')
+_ = MessageFactory("ploneconf.site")
