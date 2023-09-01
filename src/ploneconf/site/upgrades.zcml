@@ -1,0 +1,17 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="ploneconf.site">
+
+  <genericsetup:upgradeStep
+      title="Update registry"
+      description="Add vocabulary sponsor_levels"
+      source="1000"
+      destination="1001"
+      handler="ploneconf.site.upgrades.updateRegistry"
+      sortkey="1"
+      profile="ploneconf.site:default"
+      />
+
+</configure>

@@ -17,6 +17,7 @@
   <include package=".behaviors" />
 
   <include file="permissions.zcml" />
+  <include file="upgrades.zcml" />
 
   <genericsetup:registerProfile
       name="default"
@@ -52,5 +53,9 @@
   <utility
       name="ploneconf.rooms"
       component="ploneconf.site.vocabularies.RoomsVocabularyFactory" />
+
+  <utility
+      name="ploneconf.sponsor_levels"
+      component="ploneconf.site.vocabularies.SponsorLevelVocabulary" />
 
 </configure>

@@ -156,6 +156,52 @@ class IPloneconfSettings(Interface):
         },
     )
 
+    sponsor_levels = schema.JSONField(
+        title="Sponsor levels",
+        description="Level of sponsoring",
+        required=False,
+        schema=VOCABULARY_SCHEMA,
+        default={
+            "items": [
+                {
+                    "token": "platinum",
+                    "titles": {
+                        "en": "Platinum",
+                        "de": "Platin",
+                    },
+                },
+                {
+                    "token": "gold",
+                    "titles": {
+                        "en": "Gold",
+                        "de": "Gold",
+                    },
+                },
+                {
+                    "token": "silver",
+                    "titles": {
+                        "en": "Silver",
+                        "de": "Silber",
+                    },
+                },
+                {
+                    "token": "bronze",
+                    "titles": {
+                        "en": "Bronze",
+                        "de": "Bronze",
+                    },
+                },
+            ]
+        },
+        missing_value={"items": []},
+    )
+    directives.widget(
+        "sponsor_levels",
+        frontendOptions={
+            "widget": "vocabularyterms",
+        },
+    )
+
 
 @adapter(Interface, Interface)
 class PloneConfRegistryConfigletPanel(RegistryConfigletPanel):
