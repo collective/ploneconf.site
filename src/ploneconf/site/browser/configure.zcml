@@ -20,6 +20,10 @@
       directory="static"
       />
 
+  <adapter
+      factory="ploneconf.site.browser.controlpanel.PloneConfRegistryConfigletPanel"
+      name="ploneconf-controlpanel" />
+  
   <browser:page
     name="create_demo_talks"
     for="*"
