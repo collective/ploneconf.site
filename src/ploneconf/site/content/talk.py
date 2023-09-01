@@ -16,7 +16,7 @@ class ITalk(model.Schema):
     directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(
         title="Type of talk",
-        vocabulary='ploneconf.types_of_talk',
+        vocabulary="ploneconf.types_of_talk",
         required=True,
     )
 
@@ -30,7 +30,7 @@ class ITalk(model.Schema):
     directives.widget(audience=CheckBoxFieldWidget)
     audience = schema.Set(
         title="Audience",
-        value_type=schema.Choice(vocabulary='ploneconf.audiences'),
+        value_type=schema.Choice(vocabulary="ploneconf.audiences"),
         required=False,
     )
 
@@ -79,8 +79,8 @@ class ITalk(model.Schema):
     )
 
     room = schema.Choice(
-        title='Room',
-        vocabulary='ploneconf.rooms',
+        title="Room",
+        vocabulary="ploneconf.rooms",
         required=False,
     )
 
