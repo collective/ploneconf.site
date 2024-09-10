@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ploneconf.site"
+    >
+
+  <browser:page
+      name="create_demo_talks"
+      for="*"
+      class=".demo.DemoContent"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
+      name="debugview"
+      for="*"
+      class=".demo.DebugView"
+      permission="cmf.ManagePortal"
+      />
+
+</configure>
