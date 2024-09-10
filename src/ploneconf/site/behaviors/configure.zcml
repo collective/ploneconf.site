@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ploneconf.site"
+    >
+
+  <plone:behavior
+      name="ploneconf.featured"
+      title="Featured"
+      description="Control if a item is shown on the frontpage"
+      provides="ploneconf.site.behaviors.featured.IFeatured"
+      />
+
+</configure>
