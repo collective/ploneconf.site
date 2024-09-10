@@ -31,6 +31,7 @@
     <element value="plone.dublincore" />
     <element value="plone.namefromtitle" />
     <element value="plone.versioning" />
+    <element value="ploneconf.featured" />
   </property>
   <property name="model_source" />
   <property name="model_file" />
