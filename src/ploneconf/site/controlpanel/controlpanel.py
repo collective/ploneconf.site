@@ -1,5 +1,7 @@
 from plone import schema
 from plone.autoform import directives
+from plone.restapi.controlpanels import RegistryConfigletPanel
+from zope.component import adapter
 from zope.interface import Interface
 
 import json
@@ -147,3 +149,15 @@ class IPloneconfSettings(Interface):
             "widget": "vocabularyterms",
         },
     )
+
+
+@adapter(Interface, Interface)
+class PloneConfRegistryConfigletPanel(RegistryConfigletPanel):
+    """Volto control panel"""
+
+    schema = IPloneconfSettings
+    schema_prefix = "ploneconf"
+    configlet_id = "ploneconf-controlpanel"
+    configlet_category_id = "Products"
+    title = "Ploneconf Settings"
+    group = "Products"

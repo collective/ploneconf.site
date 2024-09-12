@@ -4,5 +4,8 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="ploneconf.site"
     >
-
+  <adapter
+      factory="ploneconf.site.controlpanel.controlpanel.PloneConfRegistryConfigletPanel"
+      name="ploneconf-controlpanel"
+      />
 </configure>
