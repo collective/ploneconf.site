@@ -6,4 +6,11 @@
     <indexed_attr value="featured" />
   </index>
   <column value="featured" />
+
+  <index meta_type="KeywordIndex"
+         name="type_of_talk"
+  >
+    <indexed_attr value="type_of_talk" />
+  </index>
+  <column value="type_of_talk" />
 </object>
