@@ -1,3 +1,16 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
+  <utility
+      name="ploneconf.types_of_talk"
+      component="ploneconf.site.vocabularies.talk.TalkTypesVocabulary"
+      />
+  <utility
+      name="ploneconf.audiences"
+      component="ploneconf.site.vocabularies.talk.AudiencesVocabulary"
+      />
+  <utility
+      name="ploneconf.rooms"
+      component="ploneconf.site.vocabularies.talk.RoomsVocabularyFactory"
+      />
+
 </configure>
