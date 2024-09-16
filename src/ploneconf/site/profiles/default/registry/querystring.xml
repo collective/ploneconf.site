@@ -39,4 +39,53 @@
     <value key="vocabulary">ploneconf.types_of_talk</value>
   </records>
 
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.speaker"
+  >
+    <value key="title">Speaker</value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.string.is</element>
+      <element>plone.app.querystring.operation.string.contains</element>
+    </value>
+    <value key="group"
+           i18n:translate=""
+    >Metadata</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.audience"
+  >
+    <value key="title">Audience</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+      <element>plone.app.querystring.operation.selection.none</element>
+    </value>
+    <value key="group"
+           i18n:translate=""
+    >Metadata</value>
+    <value key="vocabulary">ploneconf.audiences</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.room"
+  >
+    <value key="title">Room</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+      <element>plone.app.querystring.operation.selection.none</element>
+    </value>
+    <value key="group"
+           i18n:translate=""
+    >Metadata</value>
+    <value key="vocabulary">ploneconf.rooms</value>
+  </records>
+
 </registry>
