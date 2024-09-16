@@ -13,4 +13,29 @@
     <indexed_attr value="type_of_talk" />
   </index>
   <column value="type_of_talk" />
+
+
+  <index meta_type="FieldIndex"
+         name="speaker"
+  >
+    <indexed_attr value="speaker" />
+  </index>
+  <index meta_type="KeywordIndex"
+         name="audience"
+  >
+    <indexed_attr value="audience" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="room"
+  >
+    <indexed_attr value="room" />
+  </index>
+
+  <column value="speaker" />
+  <column value="audience" />
+  <column value="room" />
+
+
+  <column value="level" />
+  <column value="url" />
 </object>
