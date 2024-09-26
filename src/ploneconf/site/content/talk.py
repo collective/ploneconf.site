@@ -1,3 +1,4 @@
+from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.dexterity.content import Container
@@ -20,6 +21,7 @@ class ITalk(model.Schema):
         required=True,
     )
 
+    textindexer.searchable("details")
     details = RichText(
         title="Details",
         description="Description of the talk (max. 2000 characters)",
@@ -36,6 +38,7 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    textindexer.searchable("speaker")
     speaker = schema.TextLine(
         title="Speaker",
         description="Name (or names) of the speaker",

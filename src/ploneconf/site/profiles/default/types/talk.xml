@@ -33,6 +33,7 @@
     <element value="plone.versioning" />
     <element value="ploneconf.featured" />
     <element value="plone.eventbasic" />
+    <element value="plone.textindexer" />
   </property>
   <property name="model_source" />
   <property name="model_file" />
