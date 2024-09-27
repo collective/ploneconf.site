@@ -1,5 +1,6 @@
 from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
+from Products.CMFPlone.interfaces import constrains
 
 import logging
 
@@ -21,7 +22,8 @@ def update_types(setup_tool):
 
 
 def cleanup_site_structure(setup_tool):
-    # Load default profile including new type info
+    # Load default profile including new type info.
+    # This makes 'update_types' superfluous.
     reload_gs_profile(setup_tool)
 
     portal = api.portal.get()
@@ -65,6 +67,18 @@ def cleanup_site_structure(setup_tool):
         # Move talk to the folder '/schedule'
         api.content.move(source=obj, target=schedule_folder, safe_id=True)
         logger.info(f"{obj.absolute_url()} moved to {schedule_folder_url}")
+
+    # Allow logged-in users to create content
+    api.group.grant_roles(
+        groupname="AuthenticatedUsers", roles=["Contributor"], obj=schedule_folder
+    )
+
+    # Constrain addable types to talk
+    behavior = constrains.ISelectableConstrainTypes(schedule_folder)
+    behavior.setConstrainTypesMode(constrains.ENABLED)
+    behavior.setLocallyAllowedTypes(["talk"])
+    behavior.setImmediatelyAddableTypes(["talk"])
+    logger.info(f"Added and configured {schedule_folder.absolute_url()}")
 
 
 def update_indexes(setup_tool):
