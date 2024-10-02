@@ -25,4 +25,17 @@
         />
   </genericsetup:upgradeSteps>
 
+
+  <genericsetup:upgradeSteps
+      profile="ploneconf.site:default"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeStep
+        title="Update talks"
+        description="Change to relation speaker"
+        handler="ploneconf.site.upgrades.v1002.update_talks"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
