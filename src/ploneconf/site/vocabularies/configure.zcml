@@ -12,5 +12,8 @@
       name="ploneconf.rooms"
       component="ploneconf.site.vocabularies.talk.RoomsVocabularyFactory"
       />
-
+  <utility
+      name="ploneconf.speakers"
+      component="ploneconf.site.vocabularies.speaker.SpeakerVocabularyFactory"
+      />
 </configure>

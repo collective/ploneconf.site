@@ -14,7 +14,6 @@ dist/
 docs/_build
 __pycache__/
 .tox
-.vscode/
 node_modules/
 
 # venv / buildout related
@@ -51,3 +50,6 @@ var/
 ##
 
 *.mo
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

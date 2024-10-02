@@ -7,4 +7,6 @@ class JSONSummarySerializerMetadata:
     """Additional metadata to be exposed on listings."""
 
     def default_metadata_fields(self):
-        return {"image_field", "image_scales", "effective", "Subject"}
+        set_of_fields = {"image_field", "image_scales", "effective", "Subject"}
+        set_of_fields.update({"speaker", "room", "audience"})
+        return set_of_fields

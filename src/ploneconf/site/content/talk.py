@@ -1,12 +1,10 @@
 from plone.app.dexterity import textindexer
 from plone.app.textfield import RichText
-from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.namedfile.field import NamedBlobImage
-from plone.schema.email import Email
 from plone.supermodel import model
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
-from z3c.form.browser.radio import RadioFieldWidget
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import implementer
 
@@ -14,7 +12,6 @@ from zope.interface import implementer
 class ITalk(model.Schema):
     """Dexterity-Schema for Talks"""
 
-    directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(
         title="Type of talk",
         vocabulary="ploneconf.types_of_talk",
@@ -29,7 +26,6 @@ class ITalk(model.Schema):
         required=True,
     )
 
-    directives.widget(audience=CheckBoxFieldWidget)
     audience = schema.Set(
         title="Audience",
         value_type=schema.Choice(
@@ -38,48 +34,17 @@ class ITalk(model.Schema):
         required=False,
     )
 
-    textindexer.searchable("speaker")
-    speaker = schema.TextLine(
+    speaker = RelationList(
         title="Speaker",
-        description="Name (or names) of the speaker",
+        description="Speakers of the talk",
+        value_type=RelationChoice(vocabulary="ploneconf.speakers"),
         required=False,
-    )
-
-    company = schema.TextLine(
-        title="Company",
-        required=False,
-    )
-
-    email = Email(
-        title="Email",
-        description="Email address of the speaker",
-        required=False,
-    )
-
-    website = schema.TextLine(
-        title="Website",
-        required=False,
-    )
-
-    twitter = schema.TextLine(
-        title="Twitter name",
-        required=False,
-    )
-
-    github = schema.TextLine(
-        title="Github username",
-        required=False,
+        default=[],
     )
 
     image = NamedBlobImage(
         title="Image",
         description="Portrait of the speaker",
-        required=False,
-    )
-
-    speaker_biography = RichText(
-        title="Speaker Biography (max. 1000 characters)",
-        max_length=1000,
         required=False,
     )
 
