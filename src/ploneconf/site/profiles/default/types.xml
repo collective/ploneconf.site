@@ -9,4 +9,8 @@
   <object meta_type="Dexterity FTI"
           name="sponsor"
   />
+
+  <object meta_type="Dexterity FTI"
+          name="speaker"
+  />
 </object>
