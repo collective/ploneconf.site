@@ -1,3 +1,3 @@
 # Contributors
 
-- Plone Community [collective@plone.org]
+- Katja Süss [github @ksuess]
