@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone"
+>
+  <record field="email_charset"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.email_charset"
+  >
+    <field type="plone.registry.field.ASCIILine">
+      <default>utf-8</default>
+      <description>Characterset to use when sending e-mails.</description>
+      <title>E-mail characterset</title>
+    </field>
+    <value>utf-8</value>
+  </record>
+  <record field="email_from_address"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.email_from_address"
+  >
+    <field type="plone.registry.field.ASCIILine">
+      <description>Plone generates e-mail using this address as the e-mail return address. It is also used as the destination address for the site-wide contact form and the 'Send test e-mail' feature.</description>
+      <title>Site 'From' address</title>
+    </field>
+    <value>training@rohberg.ch</value>
+  </record>
+  <record field="email_from_name"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.email_from_name"
+  >
+    <field type="plone.registry.field.TextLine">
+      <description>Plone generates e-mail using this name as the e-mail sender.</description>
+      <title>Site 'From' name</title>
+    </field>
+    <value>training</value>
+  </record>
+  <record field="smtp_host"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.smtp_host"
+  >
+    <field type="plone.registry.field.TextLine">
+      <default>localhost</default>
+      <description>The address of your local SMTP (outgoing e-mail) server. Usually 'localhost', unless you use an external server to send e-mail.</description>
+      <title>SMTP server</title>
+    </field>
+    <value>localhost</value>
+  </record>
+  <record field="smtp_pass"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.smtp_pass"
+  >
+    <field type="plone.registry.field.Password">
+      <description>The password for the ESMTP user account.</description>
+      <required>False</required>
+      <title>ESMTP password</title>
+    </field>
+    <value />
+  </record>
+  <record field="smtp_port"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.smtp_port"
+  >
+    <field type="plone.registry.field.Int">
+      <default>25</default>
+      <description>The port of your local SMTP (outgoing e-mail) server. Usually '25'.</description>
+      <title>SMTP port</title>
+    </field>
+    <value>25</value>
+  </record>
+  <record field="smtp_userid"
+          interface="plone.base.interfaces.controlpanel.IMailSchema"
+          name="plone.smtp_userid"
+  >
+    <field type="plone.registry.field.TextLine">
+      <description>Username for authentication to your e-mail server. Not required unless you are using ESMTP.</description>
+      <required>False</required>
+      <title>ESMTP username</title>
+    </field>
+    <value />
+  </record>
+</registry>
